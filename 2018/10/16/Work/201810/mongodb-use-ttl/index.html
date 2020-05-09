@@ -94,18 +94,18 @@
 
 
 
-  <meta name="description" content="在 MongoDB 內使用 TTLTTL == Time To Live用於存放暫存資料var collection = _database.GetCollection&amp;lt;Student&amp;gt;(&amp;quot;Students&amp;quot;); 舊的實作方法(已過時)12var index = collection.Indexes.CreateOne(Builders&amp;lt;Student&amp;gt;">
+  <meta name="description" content="在 MongoDB 內使用 TTLTTL == Time To Live用於存放暫存資料var collection = _database.GetCollection&amp;lt;Student&amp;gt;(&amp;quot;Students&amp;quot;); 舊的實作方法(已過時)   12var index = collection.Indexes.CreateOne(Builders&amp;lt;Student&amp;">
 <meta name="keywords" content="工作,MongoDB,TTL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Use TTL(Time To Live) in MongoDB">
 <meta property="og:url" content="http://yoursite.com/2018/10/16/Work/201810/mongodb-use-ttl/index.html">
 <meta property="og:site_name" content="Patrick_Hexo">
-<meta property="og:description" content="在 MongoDB 內使用 TTLTTL == Time To Live用於存放暫存資料var collection = _database.GetCollection&amp;lt;Student&amp;gt;(&amp;quot;Students&amp;quot;); 舊的實作方法(已過時)12var index = collection.Indexes.CreateOne(Builders&amp;lt;Student&amp;gt;">
+<meta property="og:description" content="在 MongoDB 內使用 TTLTTL == Time To Live用於存放暫存資料var collection = _database.GetCollection&amp;lt;Student&amp;gt;(&amp;quot;Students&amp;quot;); 舊的實作方法(已過時)   12var index = collection.Indexes.CreateOne(Builders&amp;lt;Student&amp;">
 <meta property="og:locale" content="zh-TW">
-<meta property="og:updated_time" content="2019-05-26T03:05:14.000Z">
+<meta property="og:updated_time" content="2019-05-26T03:05:14.531Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Use TTL(Time To Live) in MongoDB">
-<meta name="twitter:description" content="在 MongoDB 內使用 TTLTTL == Time To Live用於存放暫存資料var collection = _database.GetCollection&amp;lt;Student&amp;gt;(&amp;quot;Students&amp;quot;); 舊的實作方法(已過時)12var index = collection.Indexes.CreateOne(Builders&amp;lt;Student&amp;gt;">
+<meta name="twitter:description" content="在 MongoDB 內使用 TTLTTL == Time To Live用於存放暫存資料var collection = _database.GetCollection&amp;lt;Student&amp;gt;(&amp;quot;Students&amp;quot;); 舊的實作方法(已過時)   12var index = collection.Indexes.CreateOne(Builders&amp;lt;Student&amp;">
 
 
 
@@ -466,9 +466,11 @@
 
       
         <h1 id="在-MongoDB-內使用-TTL"><a href="#在-MongoDB-內使用-TTL" class="headerlink" title="在 MongoDB 內使用 TTL"></a>在 MongoDB 內使用 TTL</h1><p>TTL == Time To Live<br>用於存放暫存資料<br><code>var collection = _database.GetCollection&lt;Student&gt;(&quot;Students&quot;);</code></p>
-<p>舊的實作方法(已過時)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var index = collection.Indexes.CreateOne(Builders&lt;Student&gt;.IndexKeys.Ascending(&quot;expireAt&quot;),</span><br><span class="line">            new CreateIndexOptions &#123; ExpireAfter = new TimeSpan(0, 0, 20) &#125;);</span><br></pre></td></tr></table></figure></p>
-<p>新的實作方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var options = new CreateIndexOptions &#123; ExpireAfter = new TimeSpan(0, 0, 20) &#125;;</span><br><span class="line">var index = new CreateIndexModel&lt;Student&gt;(Builders&lt;Student&gt;.IndexKeys.Ascending(&quot;expireAt&quot;),options);</span><br><span class="line">collection.Indexes.CreateOne(index);</span><br></pre></td></tr></table></figure></p>
+<p>舊的實作方法(已過時)  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var index = collection.Indexes.CreateOne(Builders&lt;Student&gt;.IndexKeys.Ascending(&quot;expireAt&quot;),</span><br><span class="line">            new CreateIndexOptions &#123; ExpireAfter = new TimeSpan(0, 0, 20) &#125;);</span><br></pre></td></tr></table></figure>
 
+<p>新的實作方法  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var options = new CreateIndexOptions &#123; ExpireAfter = new TimeSpan(0, 0, 20) &#125;;</span><br><span class="line">var index = new CreateIndexModel&lt;Student&gt;(Builders&lt;Student&gt;.IndexKeys.Ascending(&quot;expireAt&quot;),options);</span><br><span class="line">collection.Indexes.CreateOne(index);</span><br></pre></td></tr></table></figure>
       
     </div>
 

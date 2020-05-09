@@ -95,14 +95,14 @@
 
 
   <meta name="description" content="接昨日(Provider 與 IdentityUser 衝突 PrimaryKey 衝突)台北市沒放颱風假呢 只好使用另一招了 SQL分離法把Identity那邊的放在支援的MSSQL上 把GameData部分放在MongoDb上 Try Try 看吧 今天還要加入LOG TABLE呢  在同一個Project內使用兩個ContextCODE PROJECT : Entity Framework">
-<meta name="keywords" content="工作,C#,MongoDB,AspNet Core,EntityFramework Core,Database">
+<meta name="keywords" content="工作,C#,AspNet Core,EntityFramework Core,MongoDB,Database">
 <meta property="og:type" content="article">
 <meta property="og:title" content="20180711工作日誌(EntityFramework; MongoDB; Owend Entity Types; Console Build Webhost)">
 <meta property="og:url" content="http://yoursite.com/2018/07/11/Work/201807/20180711工作日誌/index.html">
 <meta property="og:site_name" content="Patrick_Hexo">
 <meta property="og:description" content="接昨日(Provider 與 IdentityUser 衝突 PrimaryKey 衝突)台北市沒放颱風假呢 只好使用另一招了 SQL分離法把Identity那邊的放在支援的MSSQL上 把GameData部分放在MongoDb上 Try Try 看吧 今天還要加入LOG TABLE呢  在同一個Project內使用兩個ContextCODE PROJECT : Entity Framework">
 <meta property="og:locale" content="zh-TW">
-<meta property="og:updated_time" content="2019-05-26T03:05:14.000Z">
+<meta property="og:updated_time" content="2019-05-26T03:05:14.514Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="20180711工作日誌(EntityFramework; MongoDB; Owend Entity Types; Console Build Webhost)">
 <meta name="twitter:description" content="接昨日(Provider 與 IdentityUser 衝突 PrimaryKey 衝突)台北市沒放颱風假呢 只好使用另一招了 SQL分離法把Identity那邊的放在支援的MSSQL上 把GameData部分放在MongoDb上 Try Try 看吧 今天還要加入LOG TABLE呢  在同一個Project內使用兩個ContextCODE PROJECT : Entity Framework">
@@ -464,8 +464,10 @@
 <h2 id="EF-Code-2-0-Owend-Entity-Types"><a href="#EF-Code-2-0-Owend-Entity-Types" class="headerlink" title="EF Code 2.0 Owend Entity Types"></a>EF Code 2.0 Owend Entity Types</h2><p><a href="https://docs.microsoft.com/zh-tw/ef/core/modeling/owned-entities" target="_blank" rel="noopener">MS Docs : Owned Entity Types</a></p>
 <p>意思就是說呢<br>使用 FluentAPI &gt;&gt; OwnsOne 在 OnModalCreating 的時候<br>會直接將一個CLASS包進去指定的CLASS內<br>而不用ForeignKey去做連結<br>真方便  </p>
 <hr>
-<h2 id="AspNetCore-Console-App-Build-a-WebHost"><a href="#AspNetCore-Console-App-Build-a-WebHost" class="headerlink" title="AspNetCore Console App Build a WebHost"></a>AspNetCore Console App Build a WebHost</h2><p>記得在 .csproj 內 加入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;ItemGroup&gt;</span><br><span class="line">  &lt;PackageReference Include=&quot;Microsoft.AspNetCore.App&quot; /&gt;</span><br><span class="line">&lt;/ItemGroup&gt;</span><br></pre></td></tr></table></figure></p>
-<p>搭配使用<br><a href="https://docs.microsoft.com/zh-tw/aspnet/core/fundamentals/host/web-host?view=aspnetcore-2.1&amp;tabs=aspnetcore2x" target="_blank" rel="noopener">MS Docs : ASP.NET Core Web Host</a></p>
+<h2 id="AspNetCore-Console-App-Build-a-WebHost"><a href="#AspNetCore-Console-App-Build-a-WebHost" class="headerlink" title="AspNetCore Console App Build a WebHost"></a>AspNetCore Console App Build a WebHost</h2><p>記得在 .csproj 內 加入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;ItemGroup&gt;</span><br><span class="line">  &lt;PackageReference Include=&quot;Microsoft.AspNetCore.App&quot; /&gt;</span><br><span class="line">&lt;/ItemGroup&gt;</span><br></pre></td></tr></table></figure>
+
+<p>搭配使用<br><a href="https://docs.microsoft.com/zh-tw/aspnet/core/fundamentals/host/web-host?view=aspnetcore-2.1&tabs=aspnetcore2x" target="_blank" rel="noopener">MS Docs : ASP.NET Core Web Host</a></p>
 <hr>
 <h2 id="C-繼承的時候中間有THIS是怎麼回事"><a href="#C-繼承的時候中間有THIS是怎麼回事" class="headerlink" title="C# 繼承的時候中間有THIS是怎麼回事"></a>C# 繼承的時候中間有THIS是怎麼回事</h2><p>簡單來說就是為了簡化Constructor啦<br><a href="https://stackoverflow.com/questions/3797528/base-and-this-constructors-best-practices" target="_blank" rel="noopener">StackOverflow : base() and this() constructors best practices
 </a></p>
@@ -502,11 +504,11 @@
           
             <a href="/tags/C/" rel="tag"># C#</a>
           
-            <a href="/tags/MongoDB/" rel="tag"># MongoDB</a>
-          
             <a href="/tags/AspNet-Core/" rel="tag"># AspNet Core</a>
           
             <a href="/tags/EntityFramework-Core/" rel="tag"># EntityFramework Core</a>
+          
+            <a href="/tags/MongoDB/" rel="tag"># MongoDB</a>
           
             <a href="/tags/Database/" rel="tag"># Database</a>
           

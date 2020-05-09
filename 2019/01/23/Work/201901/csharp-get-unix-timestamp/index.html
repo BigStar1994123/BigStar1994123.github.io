@@ -94,18 +94,18 @@
 
 
 
-  <meta name="description" content="如何在 C# 內取得 Unix TimeStamp方法一1var unixTimestamp = (Int32)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds; 方法二12var foo = DateTime.UtcNow;long unixTime = ((DateTimeOffset)foo).ToUnixTi">
+  <meta name="description" content="如何在 C# 內取得 Unix TimeStamp方法一1var unixTimestamp = (Int32)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;  方法二12var foo = DateTime.UtcNow;long unixTime = ((DateTimeOffset)foo).ToUnixT">
 <meta name="keywords" content="工作,C#,Unix TimeStamp">
 <meta property="og:type" content="article">
 <meta property="og:title" content="如何在 C# 內取得 Unix TimeStamp">
 <meta property="og:url" content="http://yoursite.com/2019/01/23/Work/201901/csharp-get-unix-timestamp/index.html">
 <meta property="og:site_name" content="Patrick_Hexo">
-<meta property="og:description" content="如何在 C# 內取得 Unix TimeStamp方法一1var unixTimestamp = (Int32)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds; 方法二12var foo = DateTime.UtcNow;long unixTime = ((DateTimeOffset)foo).ToUnixTi">
+<meta property="og:description" content="如何在 C# 內取得 Unix TimeStamp方法一1var unixTimestamp = (Int32)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;  方法二12var foo = DateTime.UtcNow;long unixTime = ((DateTimeOffset)foo).ToUnixT">
 <meta property="og:locale" content="zh-TW">
-<meta property="og:updated_time" content="2019-05-26T03:05:14.000Z">
+<meta property="og:updated_time" content="2019-05-26T03:05:14.542Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何在 C# 內取得 Unix TimeStamp">
-<meta name="twitter:description" content="如何在 C# 內取得 Unix TimeStamp方法一1var unixTimestamp = (Int32)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds; 方法二12var foo = DateTime.UtcNow;long unixTime = ((DateTimeOffset)foo).ToUnixTi">
+<meta name="twitter:description" content="如何在 C# 內取得 Unix TimeStamp方法一1var unixTimestamp = (Int32)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;  方法二12var foo = DateTime.UtcNow;long unixTime = ((DateTimeOffset)foo).ToUnixT">
 
 
 
@@ -466,7 +466,9 @@
 
       
         <h1 id="如何在-C-內取得-Unix-TimeStamp"><a href="#如何在-C-內取得-Unix-TimeStamp" class="headerlink" title="如何在 C# 內取得 Unix TimeStamp"></a>如何在 C# 內取得 Unix TimeStamp</h1><h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var unixTimestamp = (Int32)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;</span><br></pre></td></tr></table></figure>
+
 <h2 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var foo = DateTime.UtcNow;</span><br><span class="line">long unixTime = ((DateTimeOffset)foo).ToUnixTimeSeconds();</span><br></pre></td></tr></table></figure>
+
 <p><a href="https://stackoverflow.com/questions/17632584/how-to-get-the-unix-timestamp-in-c-sharp" target="_blank" rel="noopener">StackOverflow : How to get the unix timestamp in C#</a></p>
 
       

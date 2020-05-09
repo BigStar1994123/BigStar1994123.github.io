@@ -94,18 +94,18 @@
 
 
 
-  <meta name="description" content="DbContext Use WebApi will auto dispose目前在使用MongoDb時，如果出現Exception，下次Request進來再使用此MongoDb，會出現下列錯誤12Cannot access a disposed object. A common cause of this error is disposing a context that was resolved">
+  <meta name="description" content="DbContext Use WebApi will auto dispose目前在使用MongoDb時，如果出現Exception，下次Request進來再使用此MongoDb，會出現下列錯誤   12Cannot access a disposed object. A common cause of this error is disposing a context that was resol">
 <meta name="keywords" content="工作">
 <meta property="og:type" content="article">
 <meta property="og:title" content="20180814工作日誌">
 <meta property="og:url" content="http://yoursite.com/2018/08/14/Work/201808/20180814工作日誌/index.html">
 <meta property="og:site_name" content="Patrick_Hexo">
-<meta property="og:description" content="DbContext Use WebApi will auto dispose目前在使用MongoDb時，如果出現Exception，下次Request進來再使用此MongoDb，會出現下列錯誤12Cannot access a disposed object. A common cause of this error is disposing a context that was resolved">
+<meta property="og:description" content="DbContext Use WebApi will auto dispose目前在使用MongoDb時，如果出現Exception，下次Request進來再使用此MongoDb，會出現下列錯誤   12Cannot access a disposed object. A common cause of this error is disposing a context that was resol">
 <meta property="og:locale" content="zh-TW">
-<meta property="og:updated_time" content="2019-05-26T03:05:14.000Z">
+<meta property="og:updated_time" content="2019-05-26T03:05:14.520Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="20180814工作日誌">
-<meta name="twitter:description" content="DbContext Use WebApi will auto dispose目前在使用MongoDb時，如果出現Exception，下次Request進來再使用此MongoDb，會出現下列錯誤12Cannot access a disposed object. A common cause of this error is disposing a context that was resolved">
+<meta name="twitter:description" content="DbContext Use WebApi will auto dispose目前在使用MongoDb時，如果出現Exception，下次Request進來再使用此MongoDb，會出現下列錯誤   12Cannot access a disposed object. A common cause of this error is disposing a context that was resol">
 
 
 
@@ -472,7 +472,9 @@
       
 
       
-        <h2 id="DbContext-Use-WebApi-will-auto-dispose"><a href="#DbContext-Use-WebApi-will-auto-dispose" class="headerlink" title="DbContext Use WebApi will auto dispose"></a>DbContext Use WebApi will auto dispose</h2><p>目前在使用MongoDb時，<br>如果出現Exception，<br>下次Request進來再使用此MongoDb，<br>會出現下列錯誤<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Cannot access a disposed object. A common cause of this error is disposing a context that was resolved from dependency injection and then later trying to use the same context instance elsewhere in your application. This may occur if you are calling Dispose() on the context, or wrapping the context in a using statement. If you are using dependency injection, you should let the dependency injection container take care of disposing context instances.</span><br><span class="line">Object name: &apos;DbContext&apos;.</span><br></pre></td></tr></table></figure></p>
+        <h2 id="DbContext-Use-WebApi-will-auto-dispose"><a href="#DbContext-Use-WebApi-will-auto-dispose" class="headerlink" title="DbContext Use WebApi will auto dispose"></a>DbContext Use WebApi will auto dispose</h2><p>目前在使用MongoDb時，<br>如果出現Exception，<br>下次Request進來再使用此MongoDb，<br>會出現下列錯誤  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Cannot access a disposed object. A common cause of this error is disposing a context that was resolved from dependency injection and then later trying to use the same context instance elsewhere in your application. This may occur if you are calling Dispose() on the context, or wrapping the context in a using statement. If you are using dependency injection, you should let the dependency injection container take care of disposing context instances.</span><br><span class="line">Object name: &apos;DbContext&apos;.</span><br></pre></td></tr></table></figure>
+
 <p>可能的解決辦法<br><a href="https://codingfiasco.wordpress.com/2016/05/30/entity-frameworks-dbcontext-disposal-in-web-api-async/" target="_blank" rel="noopener">Entity Framework’s DBContext Disposal in Web Api Async</a></p>
 <h2 id="EntityFrameworkCore-MongoDb-Provider-Data欄位每筆資料需相同"><a href="#EntityFrameworkCore-MongoDb-Provider-Data欄位每筆資料需相同" class="headerlink" title="EntityFrameworkCore MongoDb Provider Data欄位每筆資料需相同"></a>EntityFrameworkCore MongoDb Provider Data欄位每筆資料需相同</h2><p>如果A資料有 ID NAME DES，<br>B資料有 ID NAME DES OTHER,<br>則會因為無法DeSerialize而Fail。  </p>
 

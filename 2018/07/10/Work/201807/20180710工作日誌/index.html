@@ -95,14 +95,14 @@
 
 
   <meta name="description" content="接昨日 (在 EF Core 上使用 MongoDB)EntityFrameworkCore.MongoDb 範例CODE跑起來OK 套到自己的CODE上出現錯誤 12345678System.InvalidOperationException: &amp;apos;A key cannot be configured on &amp;apos;PocketHiAccount&amp;apos;because it is">
-<meta name="keywords" content="工作,C#,MongoDB,AspNet Core,EntityFramework Core,Database,Typhoon">
+<meta name="keywords" content="工作,C#,AspNet Core,EntityFramework Core,MongoDB,Database,Typhoon">
 <meta property="og:type" content="article">
 <meta property="og:title" content="20180710工作日誌(EntityFramework; MongoDB; Typhoon)">
 <meta property="og:url" content="http://yoursite.com/2018/07/10/Work/201807/20180710工作日誌/index.html">
 <meta property="og:site_name" content="Patrick_Hexo">
 <meta property="og:description" content="接昨日 (在 EF Core 上使用 MongoDB)EntityFrameworkCore.MongoDb 範例CODE跑起來OK 套到自己的CODE上出現錯誤 12345678System.InvalidOperationException: &amp;apos;A key cannot be configured on &amp;apos;PocketHiAccount&amp;apos;because it is">
 <meta property="og:locale" content="zh-TW">
-<meta property="og:updated_time" content="2019-05-26T03:05:14.000Z">
+<meta property="og:updated_time" content="2019-05-26T03:05:14.512Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="20180710工作日誌(EntityFramework; MongoDB; Typhoon)">
 <meta name="twitter:description" content="接昨日 (在 EF Core 上使用 MongoDB)EntityFrameworkCore.MongoDb 範例CODE跑起來OK 套到自己的CODE上出現錯誤 12345678System.InvalidOperationException: &amp;apos;A key cannot be configured on &amp;apos;PocketHiAccount&amp;apos;because it is">
@@ -455,13 +455,16 @@
 <p>範例CODE跑起來OK</p>
 <p>套到自己的CODE上出現錯誤</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">System.InvalidOperationException: </span><br><span class="line">&apos;A key cannot be configured on &apos;PocketHiAccount&apos;</span><br><span class="line">because it is a derived type.</span><br><span class="line">The key must be configured on the root type &apos;IdentityUser&lt;Guid&gt;&apos;. </span><br><span class="line">If you did not intend for &apos;IdentityUser&lt;Guid&gt;&apos; to be included in the model, </span><br><span class="line">ensure that it is not included in a DbSet property on your context, </span><br><span class="line">referenced in a configuration call to ModelBuilder, </span><br><span class="line">or referenced from a navigation property on a type that is included in the model.&apos;</span><br></pre></td></tr></table></figure>
+
 <p>金拍垮</p>
 <p>問題原因猜測：<br><code>EFCode-MongoDB Provider &amp; IdentityDbContext 在PrimaryKey部分會衝突</code>  </p>
-<p>在範例Code內是使用 MongoDB 的 ObjectId<br>與IdentityUser\<tkey> 衝突到<br>且範例Code是使用DbContext<br>可能跟這個有關係</tkey></p>
+<p>在範例Code內是使用 MongoDB 的 ObjectId<br>與IdentityUser&lt;Tkey&gt; 衝突到<br>且範例Code是使用DbContext<br>可能跟這個有關係</p>
 <p>所以試著在範例CODE的 DbContext 改成 IdentityDbContext  </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public class ZooDbContext : IdentityDbContext&lt;IdentiryUser, IdentityRole, ObjectId&gt;</span><br></pre></td></tr></table></figure>
+
 <p>還是錯 ㄏㄏ</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">System.InvalidOperationException: </span><br><span class="line">A key cannot be configured on &apos;PocketHiAccount&apos; because it is a derived type. The key must be configured on the root type &apos;IdentityUser&lt;ObjectId&gt;&apos;. If you did not intend for &apos;IdentityUser&lt;ObjectId&gt;&apos; to be included in the model, ensure that it is not included in a DbSet property on your context, referenced in a configuration call to ModelBuilder, or referenced from a navigation property on a type that is included in the model.</span><br></pre></td></tr></table></figure>
+
 <p>Q_Q</p>
 <h2 id="颱風來啦-四點下班"><a href="#颱風來啦-四點下班" class="headerlink" title="颱風來啦 四點下班"></a>颱風來啦 四點下班</h2><p>大家8888888888888888888888888888</p>
 
@@ -494,11 +497,11 @@
           
             <a href="/tags/C/" rel="tag"># C#</a>
           
-            <a href="/tags/MongoDB/" rel="tag"># MongoDB</a>
-          
             <a href="/tags/AspNet-Core/" rel="tag"># AspNet Core</a>
           
             <a href="/tags/EntityFramework-Core/" rel="tag"># EntityFramework Core</a>
+          
+            <a href="/tags/MongoDB/" rel="tag"># MongoDB</a>
           
             <a href="/tags/Database/" rel="tag"># Database</a>
           

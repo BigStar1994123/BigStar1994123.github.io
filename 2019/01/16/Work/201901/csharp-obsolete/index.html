@@ -94,18 +94,18 @@
 
 
 
-  <meta name="description" content="C# 標示方法已過時這樣做   123[Obsolete(&amp;quot;Method1 is deprecated, please use Method2 instead.&amp;quot;)]public void Method1()&amp;#123; … &amp;#125; 也可以這樣   1[Obsolete(&amp;quot;Method1 is deprecated, please use Method2 ins">
+  <meta name="description" content="C# 標示方法已過時這樣做   123[Obsolete(&amp;quot;Method1 is deprecated, please use Method2 instead.&amp;quot;)]public void Method1()&amp;#123; … &amp;#125;  也可以這樣   1[Obsolete(&amp;quot;Method1 is deprecated, please use Method2 in">
 <meta name="keywords" content="工作">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C# 標示方法或變數已過時">
 <meta property="og:url" content="http://yoursite.com/2019/01/16/Work/201901/csharp-obsolete/index.html">
 <meta property="og:site_name" content="Patrick_Hexo">
-<meta property="og:description" content="C# 標示方法已過時這樣做   123[Obsolete(&amp;quot;Method1 is deprecated, please use Method2 instead.&amp;quot;)]public void Method1()&amp;#123; … &amp;#125; 也可以這樣   1[Obsolete(&amp;quot;Method1 is deprecated, please use Method2 ins">
+<meta property="og:description" content="C# 標示方法已過時這樣做   123[Obsolete(&amp;quot;Method1 is deprecated, please use Method2 instead.&amp;quot;)]public void Method1()&amp;#123; … &amp;#125;  也可以這樣   1[Obsolete(&amp;quot;Method1 is deprecated, please use Method2 in">
 <meta property="og:locale" content="zh-TW">
-<meta property="og:updated_time" content="2019-05-26T03:05:14.000Z">
+<meta property="og:updated_time" content="2019-05-26T03:05:14.542Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C# 標示方法或變數已過時">
-<meta name="twitter:description" content="C# 標示方法已過時這樣做   123[Obsolete(&amp;quot;Method1 is deprecated, please use Method2 instead.&amp;quot;)]public void Method1()&amp;#123; … &amp;#125; 也可以這樣   1[Obsolete(&amp;quot;Method1 is deprecated, please use Method2 ins">
+<meta name="twitter:description" content="C# 標示方法已過時這樣做   123[Obsolete(&amp;quot;Method1 is deprecated, please use Method2 instead.&amp;quot;)]public void Method1()&amp;#123; … &amp;#125;  也可以這樣   1[Obsolete(&amp;quot;Method1 is deprecated, please use Method2 in">
 
 
 
@@ -467,10 +467,13 @@
       
         <h1 id="C-標示方法已過時"><a href="#C-標示方法已過時" class="headerlink" title="C# 標示方法已過時"></a>C# 標示方法已過時</h1><p>這樣做  </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[Obsolete(&quot;Method1 is deprecated, please use Method2 instead.&quot;)]</span><br><span class="line">public void Method1()</span><br><span class="line">&#123; … &#125;</span><br></pre></td></tr></table></figure>
+
 <p>也可以這樣  </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[Obsolete(&quot;Method1 is deprecated, please use Method2 instead.&quot;, true)]</span><br></pre></td></tr></table></figure>
+
 <p>其中 True 表示編譯時 Error  </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Obsolete(String Message, Bool error)</span><br></pre></td></tr></table></figure>
+
 
       
     </div>

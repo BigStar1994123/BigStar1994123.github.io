@@ -94,18 +94,18 @@
 
 
 
-  <meta name="description" content="Git Push 上雲端有時出現 Authentication fail 的問題 然後又不給你輸入帳號密碼解決方法11git config --system --unset credential.helper 解決方法2我個人是用這招因為方法1無效   刪除 .gitconfig [credential]部分   12345[user]    name = luozheng    email =">
+  <meta name="description" content="Git Push 上雲端有時出現 Authentication fail 的問題 然後又不給你輸入帳號密碼解決方法11git config --system --unset credential.helper  解決方法2我個人是用這招因為方法1無效   刪除 .gitconfig [credential]部分   12345[user]    name = luozheng    email =">
 <meta name="keywords" content="工作,Git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git Authentication Fail 不給輸入帳號密碼">
 <meta property="og:url" content="http://yoursite.com/2019/01/22/Work/201901/git-push-origin-authentication-fail/index.html">
 <meta property="og:site_name" content="Patrick_Hexo">
-<meta property="og:description" content="Git Push 上雲端有時出現 Authentication fail 的問題 然後又不給你輸入帳號密碼解決方法11git config --system --unset credential.helper 解決方法2我個人是用這招因為方法1無效   刪除 .gitconfig [credential]部分   12345[user]    name = luozheng    email =">
+<meta property="og:description" content="Git Push 上雲端有時出現 Authentication fail 的問題 然後又不給你輸入帳號密碼解決方法11git config --system --unset credential.helper  解決方法2我個人是用這招因為方法1無效   刪除 .gitconfig [credential]部分   12345[user]    name = luozheng    email =">
 <meta property="og:locale" content="zh-TW">
-<meta property="og:updated_time" content="2019-05-26T03:05:14.000Z">
+<meta property="og:updated_time" content="2019-05-26T03:05:14.543Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git Authentication Fail 不給輸入帳號密碼">
-<meta name="twitter:description" content="Git Push 上雲端有時出現 Authentication fail 的問題 然後又不給你輸入帳號密碼解決方法11git config --system --unset credential.helper 解決方法2我個人是用這招因為方法1無效   刪除 .gitconfig [credential]部分   12345[user]    name = luozheng    email =">
+<meta name="twitter:description" content="Git Push 上雲端有時出現 Authentication fail 的問題 然後又不給你輸入帳號密碼解決方法11git config --system --unset credential.helper  解決方法2我個人是用這招因為方法1無效   刪除 .gitconfig [credential]部分   12345[user]    name = luozheng    email =">
 
 
 
@@ -466,11 +466,14 @@
 
       
         <h1 id="Git-Push-上雲端有時出現-Authentication-fail-的問題-然後又不給你輸入帳號密碼"><a href="#Git-Push-上雲端有時出現-Authentication-fail-的問題-然後又不給你輸入帳號密碼" class="headerlink" title="Git Push 上雲端有時出現 Authentication fail 的問題 然後又不給你輸入帳號密碼"></a>Git Push 上雲端有時出現 Authentication fail 的問題 然後又不給你輸入帳號密碼</h1><h2 id="解決方法1"><a href="#解決方法1" class="headerlink" title="解決方法1"></a>解決方法1</h2><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --system --unset credential.helper</span><br></pre></td></tr></table></figure>
+
 <h2 id="解決方法2"><a href="#解決方法2" class="headerlink" title="解決方法2"></a>解決方法2</h2><p>我個人是用這招<br>因為方法1無效  </p>
 <p>刪除 .gitconfig [credential]部分  </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[user]</span><br><span class="line">    name = luozheng</span><br><span class="line">    email = qssq666@foxmail.com</span><br><span class="line">[credential]</span><br><span class="line">    helper = manager</span><br></pre></td></tr></table></figure>
+
 <p>改成  </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[user]</span><br><span class="line">    name = luozheng</span><br><span class="line">    email = qssq666@foxmail.com</span><br></pre></td></tr></table></figure>
+
 <h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><p><a href="https://www.jianshu.com/p/8a7f257e07b8" target="_blank" rel="noopener">fatal: Authentication failed for又不弹出用户名和密码 解决办法</a></p>
 
       

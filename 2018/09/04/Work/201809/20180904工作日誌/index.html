@@ -94,18 +94,18 @@
 
 
 
-  <meta name="description" content="在Nuget安裝MongoDB.Bson的時候出現NU1605的問題因為AspNet Core 太新了，MongoDB.Bson用到舊的元件，所以不能安裝。在Property那邊加入忽略NU1605的錯誤即可   1&amp;lt;WarningsAsErrors&amp;gt;NU1605&amp;lt;/WarningsAsErrors&amp;gt; Github : Build error NU1605 “Detecte">
-<meta name="keywords" content="工作,AspNetCore,Azure">
+  <meta name="description" content="在Nuget安裝MongoDB.Bson的時候出現NU1605的問題因為AspNet Core 太新了，MongoDB.Bson用到舊的元件，所以不能安裝。在Property那邊加入忽略NU1605的錯誤即可   1&amp;lt;WarningsAsErrors&amp;gt;NU1605&amp;lt;/WarningsAsErrors&amp;gt;  Github : Build error NU1605 “Detect">
+<meta name="keywords" content="工作,Azure,AspNetCore">
 <meta property="og:type" content="article">
 <meta property="og:title" content="20180904工作日誌">
 <meta property="og:url" content="http://yoursite.com/2018/09/04/Work/201809/20180904工作日誌/index.html">
 <meta property="og:site_name" content="Patrick_Hexo">
-<meta property="og:description" content="在Nuget安裝MongoDB.Bson的時候出現NU1605的問題因為AspNet Core 太新了，MongoDB.Bson用到舊的元件，所以不能安裝。在Property那邊加入忽略NU1605的錯誤即可   1&amp;lt;WarningsAsErrors&amp;gt;NU1605&amp;lt;/WarningsAsErrors&amp;gt; Github : Build error NU1605 “Detecte">
+<meta property="og:description" content="在Nuget安裝MongoDB.Bson的時候出現NU1605的問題因為AspNet Core 太新了，MongoDB.Bson用到舊的元件，所以不能安裝。在Property那邊加入忽略NU1605的錯誤即可   1&amp;lt;WarningsAsErrors&amp;gt;NU1605&amp;lt;/WarningsAsErrors&amp;gt;  Github : Build error NU1605 “Detect">
 <meta property="og:locale" content="zh-TW">
-<meta property="og:updated_time" content="2019-05-26T03:05:14.000Z">
+<meta property="og:updated_time" content="2019-05-26T03:05:14.523Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="20180904工作日誌">
-<meta name="twitter:description" content="在Nuget安裝MongoDB.Bson的時候出現NU1605的問題因為AspNet Core 太新了，MongoDB.Bson用到舊的元件，所以不能安裝。在Property那邊加入忽略NU1605的錯誤即可   1&amp;lt;WarningsAsErrors&amp;gt;NU1605&amp;lt;/WarningsAsErrors&amp;gt; Github : Build error NU1605 “Detecte">
+<meta name="twitter:description" content="在Nuget安裝MongoDB.Bson的時候出現NU1605的問題因為AspNet Core 太新了，MongoDB.Bson用到舊的元件，所以不能安裝。在Property那邊加入忽略NU1605的錯誤即可   1&amp;lt;WarningsAsErrors&amp;gt;NU1605&amp;lt;/WarningsAsErrors&amp;gt;  Github : Build error NU1605 “Detect">
 
 
 
@@ -453,14 +453,14 @@
       
         <h2 id="在Nuget安裝MongoDB-Bson的時候出現NU1605的問題"><a href="#在Nuget安裝MongoDB-Bson的時候出現NU1605的問題" class="headerlink" title="在Nuget安裝MongoDB.Bson的時候出現NU1605的問題"></a>在Nuget安裝MongoDB.Bson的時候出現NU1605的問題</h2><p>因為AspNet Core 太新了，MongoDB.Bson用到舊的元件，所以不能安裝。<br>在Property那邊加入忽略NU1605的錯誤即可  </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;WarningsAsErrors&gt;NU1605&lt;/WarningsAsErrors&gt;</span><br></pre></td></tr></table></figure>
+
 <p><a href="https://github.com/dotnet/core/issues/907" target="_blank" rel="noopener">Github : Build error NU1605 “Detected package downgrade” while adding a netstandart13 library</a>  </p>
 <p>那要怎麼忽略它在csproj內呢?  </p>
 <p><a href="https://stackoverflow.com/questions/2520853/warning-as-error-how-to-rid-these/2520873#2520873" target="_blank" rel="noopener">StackOverflow : Warning as error - How to rid these</a>  </p>
 <p>easy</p>
 <h2 id="AspNet-Core-布署到Azure出現-http-502-5-的錯誤"><a href="#AspNet-Core-布署到Azure出現-http-502-5-的錯誤" class="headerlink" title="AspNet Core 布署到Azure出現 http 502.5 的錯誤"></a>AspNet Core 布署到Azure出現 http 502.5 的錯誤</h2><p>錯誤的情況很多種，<br>最好的辦法就是Azure web api網址加上 scm，<br>使用CMD進入wwwroot然後 <code>dotnet xxxx.dll</code>  ，<br>來看發生啥錯誤。  </p>
 <p>我的錯誤是有一個資料夾忘記放入，<br>導致讀取失敗而無法build成功。<br>要把該資料夾打包成zip丟上kudu內，<br>但有個 <code>Support for more than 199 items</code> 的錯誤，<br>這時需打開瀏覽器F12，Console輸入  </p>
-<pre><code>window.localStorage[&apos;maxViewItems&apos;] = 210
-</code></pre><p>將暫存放大一些可解決此問題。<br><a href="https://github.com/projectkudu/kudu/issues/2226" target="_blank" rel="noopener">Github : Support for more than 199 items</a></p>
+<pre><code>window.localStorage[&apos;maxViewItems&apos;] = 210</code></pre><p>將暫存放大一些可解決此問題。<br><a href="https://github.com/projectkudu/kudu/issues/2226" target="_blank" rel="noopener">Github : Support for more than 199 items</a></p>
 
       
     </div>
@@ -489,9 +489,9 @@
           
             <a href="/tags/工作/" rel="tag"># 工作</a>
           
-            <a href="/tags/AspNetCore/" rel="tag"># AspNetCore</a>
-          
             <a href="/tags/Azure/" rel="tag"># Azure</a>
+          
+            <a href="/tags/AspNetCore/" rel="tag"># AspNetCore</a>
           
         </div>
       

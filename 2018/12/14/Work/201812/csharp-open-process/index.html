@@ -94,18 +94,18 @@
 
 
 
-  <meta name="description" content="C# with Open Something要打開一些玩意兒比如說要用 nodepad 打開就可以用以下語法1Process.Start(&amp;quot;notepad.exe&amp;quot;, fileName); 也可以用 CMD 開1var proc = Process.Start(@&amp;quot;cmd.exe &amp;quot;,@&amp;quot;/c C:\Users\user2\Desktop\XXXX">
+  <meta name="description" content="C# with Open Something要打開一些玩意兒比如說要用 nodepad 打開就可以用以下語法   1Process.Start(&amp;quot;notepad.exe&amp;quot;, fileName);  也可以用 CMD 開   1var proc = Process.Start(@&amp;quot;cmd.exe &amp;quot;,@&amp;quot;/c C:\Users\user2\Deskt">
 <meta name="keywords" content="工作,C#,CMD">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C# 程式碼中開啟其他程式">
 <meta property="og:url" content="http://yoursite.com/2018/12/14/Work/201812/csharp-open-process/index.html">
 <meta property="og:site_name" content="Patrick_Hexo">
-<meta property="og:description" content="C# with Open Something要打開一些玩意兒比如說要用 nodepad 打開就可以用以下語法1Process.Start(&amp;quot;notepad.exe&amp;quot;, fileName); 也可以用 CMD 開1var proc = Process.Start(@&amp;quot;cmd.exe &amp;quot;,@&amp;quot;/c C:\Users\user2\Desktop\XXXX">
+<meta property="og:description" content="C# with Open Something要打開一些玩意兒比如說要用 nodepad 打開就可以用以下語法   1Process.Start(&amp;quot;notepad.exe&amp;quot;, fileName);  也可以用 CMD 開   1var proc = Process.Start(@&amp;quot;cmd.exe &amp;quot;,@&amp;quot;/c C:\Users\user2\Deskt">
 <meta property="og:locale" content="zh-TW">
-<meta property="og:updated_time" content="2019-05-26T03:05:14.000Z">
+<meta property="og:updated_time" content="2019-05-26T03:05:14.539Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C# 程式碼中開啟其他程式">
-<meta name="twitter:description" content="C# with Open Something要打開一些玩意兒比如說要用 nodepad 打開就可以用以下語法1Process.Start(&amp;quot;notepad.exe&amp;quot;, fileName); 也可以用 CMD 開1var proc = Process.Start(@&amp;quot;cmd.exe &amp;quot;,@&amp;quot;/c C:\Users\user2\Desktop\XXXX">
+<meta name="twitter:description" content="C# with Open Something要打開一些玩意兒比如說要用 nodepad 打開就可以用以下語法   1Process.Start(&amp;quot;notepad.exe&amp;quot;, fileName);  也可以用 CMD 開   1var proc = Process.Start(@&amp;quot;cmd.exe &amp;quot;,@&amp;quot;/c C:\Users\user2\Deskt">
 
 
 
@@ -465,10 +465,14 @@
       
 
       
-        <h1 id="C-with-Open-Something"><a href="#C-with-Open-Something" class="headerlink" title="C# with Open Something"></a>C# with Open Something</h1><p>要打開一些玩意兒<br>比如說要用 nodepad 打開<br>就可以用以下語法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Process.Start(&quot;notepad.exe&quot;, fileName);</span><br></pre></td></tr></table></figure></p>
-<p>也可以用 CMD 開<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var proc = Process.Start(@&quot;cmd.exe &quot;,@&quot;/c C:\Users\user2\Desktop\XXXX.reg&quot;)</span><br></pre></td></tr></table></figure></p>
-<p>最後我使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var process = new Process</span><br><span class="line">&#123;</span><br><span class="line">    StartInfo = new ProcessStartInfo</span><br><span class="line">    &#123;</span><br><span class="line">        WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden,</span><br><span class="line">        FileName = &quot;python.exe&quot;,</span><br><span class="line">        Arguments = $&quot;openWindow.py &#123;loginInfo.CompanyId&#125; &#123;loginInfo.EmpId&#125; &#123;DecryptString(loginInfo.Pwd, _encryptKey)&#125;&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">process.Start();</span><br></pre></td></tr></table></figure></p>
+        <h1 id="C-with-Open-Something"><a href="#C-with-Open-Something" class="headerlink" title="C# with Open Something"></a>C# with Open Something</h1><p>要打開一些玩意兒<br>比如說要用 nodepad 打開<br>就可以用以下語法  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Process.Start(&quot;notepad.exe&quot;, fileName);</span><br></pre></td></tr></table></figure>
 
+<p>也可以用 CMD 開  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var proc = Process.Start(@&quot;cmd.exe &quot;,@&quot;/c C:\Users\user2\Desktop\XXXX.reg&quot;)</span><br></pre></td></tr></table></figure>
+
+<p>最後我使用  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var process = new Process</span><br><span class="line">&#123;</span><br><span class="line">    StartInfo = new ProcessStartInfo</span><br><span class="line">    &#123;</span><br><span class="line">        WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden,</span><br><span class="line">        FileName = &quot;python.exe&quot;,</span><br><span class="line">        Arguments = $&quot;openWindow.py &#123;loginInfo.CompanyId&#125; &#123;loginInfo.EmpId&#125; &#123;DecryptString(loginInfo.Pwd, _encryptKey)&#125;&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">process.Start();</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -511,8 +515,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/12/14/Work/201812/csharp-check-regex/" rel="next" title="C# 檢查 Regular Expression 正確">
-                <i class="fa fa-chevron-left"></i> C# 檢查 Regular Expression 正確
+              <a href="/2018/12/14/Work/201812/csharp-post-json-by-httpclient/" rel="next" title="C# 使用 HttpClient 進行 Post 動作">
+                <i class="fa fa-chevron-left"></i> C# 使用 HttpClient 進行 Post 動作
               </a>
             
           </div>
@@ -521,8 +525,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/12/14/Work/201812/html-url-encoding-reference/" rel="prev" title="HTML Url Encoding 快速查">
-                HTML Url Encoding 快速查 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/12/17/Work/201812/export-slack-messages/" rel="prev" title="使用第三方工具匯出 Slack 訊息">
+                使用第三方工具匯出 Slack 訊息 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

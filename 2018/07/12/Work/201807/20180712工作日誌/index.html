@@ -94,18 +94,18 @@
 
 
 
-  <meta name="description" content="AspNetCore 2.1.2 安全性更新Github : Core 記得更新  EFCore-MongoDB 原來無法處理關聯性的TABLE我發現我無法直接增加關聯性的表格進MongoDB內，在其中一個issue內也遭遇到了和我一樣的問題，作者表示：1EFCore-MongoDB is just a thin adapter between EFCore&amp;apos;s Metadata sys">
-<meta name="keywords" content="工作,C#,MongoDB,AspNet Core,EntityFramework Core,Database">
+  <meta name="description" content="AspNetCore 2.1.2 安全性更新Github : Core 記得更新  EFCore-MongoDB 原來無法處理關聯性的TABLE我發現我無法直接增加關聯性的表格進MongoDB內，在其中一個issue內也遭遇到了和我一樣的問題，作者表示：  1EFCore-MongoDB is just a thin adapter between EFCore&amp;apos;s Metadata s">
+<meta name="keywords" content="工作,C#,AspNet Core,EntityFramework Core,MongoDB,Database">
 <meta property="og:type" content="article">
 <meta property="og:title" content="20180712工作日誌(AspNetCore; MongoDB; EFCodeFirst)">
 <meta property="og:url" content="http://yoursite.com/2018/07/12/Work/201807/20180712工作日誌/index.html">
 <meta property="og:site_name" content="Patrick_Hexo">
-<meta property="og:description" content="AspNetCore 2.1.2 安全性更新Github : Core 記得更新  EFCore-MongoDB 原來無法處理關聯性的TABLE我發現我無法直接增加關聯性的表格進MongoDB內，在其中一個issue內也遭遇到了和我一樣的問題，作者表示：1EFCore-MongoDB is just a thin adapter between EFCore&amp;apos;s Metadata sys">
+<meta property="og:description" content="AspNetCore 2.1.2 安全性更新Github : Core 記得更新  EFCore-MongoDB 原來無法處理關聯性的TABLE我發現我無法直接增加關聯性的表格進MongoDB內，在其中一個issue內也遭遇到了和我一樣的問題，作者表示：  1EFCore-MongoDB is just a thin adapter between EFCore&amp;apos;s Metadata s">
 <meta property="og:locale" content="zh-TW">
-<meta property="og:updated_time" content="2019-05-26T03:05:14.000Z">
+<meta property="og:updated_time" content="2019-05-26T03:05:14.514Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="20180712工作日誌(AspNetCore; MongoDB; EFCodeFirst)">
-<meta name="twitter:description" content="AspNetCore 2.1.2 安全性更新Github : Core 記得更新  EFCore-MongoDB 原來無法處理關聯性的TABLE我發現我無法直接增加關聯性的表格進MongoDB內，在其中一個issue內也遭遇到了和我一樣的問題，作者表示：1EFCore-MongoDB is just a thin adapter between EFCore&amp;apos;s Metadata sys">
+<meta name="twitter:description" content="AspNetCore 2.1.2 安全性更新Github : Core 記得更新  EFCore-MongoDB 原來無法處理關聯性的TABLE我發現我無法直接增加關聯性的表格進MongoDB內，在其中一個issue內也遭遇到了和我一樣的問題，作者表示：  1EFCore-MongoDB is just a thin adapter between EFCore&amp;apos;s Metadata s">
 
 
 
@@ -454,7 +454,9 @@
         <h2 id="AspNetCore-2-1-2-安全性更新"><a href="#AspNetCore-2-1-2-安全性更新" class="headerlink" title="AspNetCore 2.1.2 安全性更新"></a>AspNetCore 2.1.2 安全性更新</h2><p><a href="https://github.com/dotnet/core/blob/master/release-notes/2.1/2.1.2.md" target="_blank" rel="noopener">Github : Core</a></p>
 <p>記得更新</p>
 <hr>
-<h2 id="EFCore-MongoDB-原來無法處理關聯性的TABLE"><a href="#EFCore-MongoDB-原來無法處理關聯性的TABLE" class="headerlink" title="EFCore-MongoDB 原來無法處理關聯性的TABLE"></a>EFCore-MongoDB 原來無法處理關聯性的TABLE</h2><p>我發現我無法直接增加關聯性的表格進MongoDB內，<br>在其中一個issue內也遭遇到了和我一樣的問題，<br>作者表示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">EFCore-MongoDB is just a thin adapter between EFCore&apos;s Metadata system and the official MongoDB C# driver, which has no concept of relationships that aren&apos;t explicitly in the model.</span><br></pre></td></tr></table></figure></p>
+<h2 id="EFCore-MongoDB-原來無法處理關聯性的TABLE"><a href="#EFCore-MongoDB-原來無法處理關聯性的TABLE" class="headerlink" title="EFCore-MongoDB 原來無法處理關聯性的TABLE"></a>EFCore-MongoDB 原來無法處理關聯性的TABLE</h2><p>我發現我無法直接增加關聯性的表格進MongoDB內，<br>在其中一個issue內也遭遇到了和我一樣的問題，<br>作者表示： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">EFCore-MongoDB is just a thin adapter between EFCore&apos;s Metadata system and the official MongoDB C# driver, which has no concept of relationships that aren&apos;t explicitly in the model.</span><br></pre></td></tr></table></figure>
+
 <p>好的<br>只能用較複雜的邏輯去包了<br>嗚嗚</p>
 <p><a href="https://github.com/crhairr/EntityFrameworkCore.MongoDb/issues/22" target="_blank" rel="noopener">那篇ISSUE</a></p>
 <p>那要怎麼做呢<br>找到了這篇  </p>
@@ -494,11 +496,11 @@
           
             <a href="/tags/C/" rel="tag"># C#</a>
           
-            <a href="/tags/MongoDB/" rel="tag"># MongoDB</a>
-          
             <a href="/tags/AspNet-Core/" rel="tag"># AspNet Core</a>
           
             <a href="/tags/EntityFramework-Core/" rel="tag"># EntityFramework Core</a>
+          
+            <a href="/tags/MongoDB/" rel="tag"># MongoDB</a>
           
             <a href="/tags/Database/" rel="tag"># Database</a>
           

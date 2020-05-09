@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="Patrick_Hexo">
 <meta property="og:description" content="紀錄一下說不定以後用的到的讀Configuration123456789var configuration = builder.Build();Console.WriteLine(&amp;quot;--------------------------&amp;quot;);var section = configuration.GetSection(&amp;quot;Mission_EnemyData&amp;quot;).">
 <meta property="og:locale" content="zh-TW">
-<meta property="og:updated_time" content="2019-05-26T03:05:14.000Z">
+<meta property="og:updated_time" content="2019-05-26T03:05:14.521Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="20180823工作日誌">
 <meta name="twitter:description" content="紀錄一下說不定以後用的到的讀Configuration123456789var configuration = builder.Build();Console.WriteLine(&amp;quot;--------------------------&amp;quot;);var section = configuration.GetSection(&amp;quot;Mission_EnemyData&amp;quot;).">
@@ -452,6 +452,7 @@
 
       
         <h2 id="紀錄一下說不定以後用的到的讀Configuration"><a href="#紀錄一下說不定以後用的到的讀Configuration" class="headerlink" title="紀錄一下說不定以後用的到的讀Configuration"></a>紀錄一下說不定以後用的到的讀Configuration</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var configuration = builder.Build();</span><br><span class="line"></span><br><span class="line">Console.WriteLine(&quot;--------------------------&quot;);</span><br><span class="line">var section = configuration.GetSection(&quot;Mission_EnemyData&quot;).GetChildren().Where(x =&gt; x.GetSection(&quot;Mission_ID&quot;).Value == &quot;Mission_002&quot;);</span><br><span class="line">foreach (var s in section)</span><br><span class="line">&#123;</span><br><span class="line">    Console.WriteLine($&quot;Key: &#123;s.Key,-30&#125;  ||  Value: &#123;s.Value&#125; ||   Path: &#123;s.Path&#125;&quot;);</span><br><span class="line">&#125;</span><br><span class="line">Console.WriteLine(&quot;--------------------------&quot;);</span><br></pre></td></tr></table></figure>
+
 <h2 id="在MongoDB用Set加入一個新Field在Document內"><a href="#在MongoDB用Set加入一個新Field在Document內" class="headerlink" title="在MongoDB用Set加入一個新Field在Document內"></a>在MongoDB用Set加入一個新Field在Document內</h2><p><a href="https://stackoverflow.com/questions/44685716/how-to-add-new-fields-to-existing-document" target="_blank" rel="noopener">StackOverflow : How to add new fields to existing document</a>  </p>
 <h2 id="MongoDB-C-Drive-使用方法"><a href="#MongoDB-C-Drive-使用方法" class="headerlink" title="MongoDB C# Drive 使用方法"></a>MongoDB C# Drive 使用方法</h2><p><a href="http://mongodb.github.io/mongo-csharp-driver/2.7/getting_started/quick_tour/#insert-a-document" target="_blank" rel="noopener">MongoDB Driver Quick Tour</a>  </p>
 <h2 id="C-算時間差距"><a href="#C-算時間差距" class="headerlink" title="C#算時間差距"></a>C#算時間差距</h2><p><a href="https://stackoverflow.com/questions/4946316/showing-difference-between-two-datetime-values-in-hours" target="_blank" rel="noopener">StackOverflow : Showing Difference between two datetime values in hours</a>  </p>

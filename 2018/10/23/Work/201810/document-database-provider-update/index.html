@@ -94,18 +94,18 @@
 
 
 
-  <meta name="description" content="MongoDb EntityFramework Provider 更新之後要改好多東西 IList &amp;gt;&amp;gt; List BsonDateTime &amp;gt;&amp;gt; DateTime  強制要改，否則實體會炸開來，最後  List\不可用，出現 list&amp;lt;string&amp;gt; is not a supported primitive type or a valid entity typ">
+  <meta name="description" content="MongoDb EntityFramework Provider 更新之後要改好多東西 IList &amp;gt;&amp;gt; List BsonDateTime &amp;gt;&amp;gt; DateTime  強制要改，否則實體會炸開來，最後  List&amp;lt;string&amp;gt;不可用，出現 list&amp;lt;string&amp;gt; is not a supported primitive type or a val">
 <meta name="keywords" content="工作,EntityFramework,Document Database Providers">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Document Database Providers Update">
 <meta property="og:url" content="http://yoursite.com/2018/10/23/Work/201810/document-database-provider-update/index.html">
 <meta property="og:site_name" content="Patrick_Hexo">
-<meta property="og:description" content="MongoDb EntityFramework Provider 更新之後要改好多東西 IList &amp;gt;&amp;gt; List BsonDateTime &amp;gt;&amp;gt; DateTime  強制要改，否則實體會炸開來，最後  List\不可用，出現 list&amp;lt;string&amp;gt; is not a supported primitive type or a valid entity typ">
+<meta property="og:description" content="MongoDb EntityFramework Provider 更新之後要改好多東西 IList &amp;gt;&amp;gt; List BsonDateTime &amp;gt;&amp;gt; DateTime  強制要改，否則實體會炸開來，最後  List&amp;lt;string&amp;gt;不可用，出現 list&amp;lt;string&amp;gt; is not a supported primitive type or a val">
 <meta property="og:locale" content="zh-TW">
-<meta property="og:updated_time" content="2019-05-26T03:05:14.000Z">
+<meta property="og:updated_time" content="2019-05-26T03:05:14.530Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Document Database Providers Update">
-<meta name="twitter:description" content="MongoDb EntityFramework Provider 更新之後要改好多東西 IList &amp;gt;&amp;gt; List BsonDateTime &amp;gt;&amp;gt; DateTime  強制要改，否則實體會炸開來，最後  List\不可用，出現 list&amp;lt;string&amp;gt; is not a supported primitive type or a valid entity typ">
+<meta name="twitter:description" content="MongoDb EntityFramework Provider 更新之後要改好多東西 IList &amp;gt;&amp;gt; List BsonDateTime &amp;gt;&amp;gt; DateTime  強制要改，否則實體會炸開來，最後  List&amp;lt;string&amp;gt;不可用，出現 list&amp;lt;string&amp;gt; is not a supported primitive type or a val">
 
 
 
@@ -471,12 +471,12 @@
 </ol>
 <p>強制要改，否則實體會炸開來，<br>最後</p>
 <ol start="3">
-<li>List\<string>不可用，出現 <code>list&lt;string&gt; is not a supported primitive type or a valid entity type</code>  </string></li>
+<li>List&lt;string&gt;不可用，出現 <code>list&lt;string&gt; is not a supported primitive type or a valid entity type</code>  </li>
 </ol>
 <p>原生的EntityFramework的限制的樣子<br>感謝鮑大人幫我找到解法<br><a href="https://stackoverflow.com/a/52499249" target="_blank" rel="noopener">StackOverflow : How to persist a list of strings with Entity Framework Core?</a><br>利用 <code>Entity Framework Core 2.1</code> 的 <code>Value Conversions</code> 可解  </p>
 <p>比較之前的 EF 就只能 List property 掛個 <code>[Notmapped]</code> 然後配合用 Json.NET 或 Automapper 把顯示出來的和存起來的做轉換</p>
 <ol start="4">
-<li>Dictionary\&lt;string, MyObject&gt;也不可用，出現同3的錯誤</li>
+<li>Dictionary&lt;string, MyObject&gt;也不可用，出現同3的錯誤</li>
 </ol>
 <p>一樣利用 <code>Value Conversions</code> 可解<br><a href="https://www.jerriepelser.com/blog/store-dictionary-as-json-using-ef-core-21" target="_blank" rel="noopener">Jerrie Pelser : Store a Dictionary as a JSON string using EF Core 2.1</a>  </p>
 
@@ -522,8 +522,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/23/Work/201810/aspnetcore-userhttpsredirection-noresponse/" rel="next" title="ASP.NET Core UserHttpsRedirection 無憑證無 Response 問題">
-                <i class="fa fa-chevron-left"></i> ASP.NET Core UserHttpsRedirection 無憑證無 Response 問題
+              <a href="/2018/10/22/Work/201810/mongodb-something/" rel="next" title="MongoDB 的一些東西">
+                <i class="fa fa-chevron-left"></i> MongoDB 的一些東西
               </a>
             
           </div>
@@ -532,8 +532,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/10/24/Work/201810/cosmosdb-mongodb-use-ttl/" rel="prev" title="CosmosDB 的 MongoDB 內如何實作 TTL (Time To Live)">
-                CosmosDB 的 MongoDB 內如何實作 TTL (Time To Live) <i class="fa fa-chevron-right"></i>
+              <a href="/2018/10/23/Work/201810/aspnetcore-userhttpsredirection-noresponse/" rel="prev" title="ASP.NET Core UserHttpsRedirection 無憑證無 Response 問題">
+                ASP.NET Core UserHttpsRedirection 無憑證無 Response 問題 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

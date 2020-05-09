@@ -94,18 +94,18 @@
 
 
 
-  <meta name="description" content="[接續昨天] NET Core 發布時輕量化 剩下一個.exe檔好棒棒Github : CoreRT Github : CoreRT Pre-Requisites  安裝Visual Studio 2017 包含Visual C++ 安裝CMake(安裝程式中記得把PATH給設定上去)  Github : CoreRT照著步驟做  Clone CoreRT的專案原始碼 Build它 build[.">
+  <meta name="description" content="[接續昨天] NET Core 發布時輕量化 剩下一個.exe檔好棒棒Github : CoreRT Github : CoreRT Pre-Requisites  安裝Visual Studio 2017 包含Visual C++ 安裝CMake(安裝程式中記得把PATH給設定上去)  Github : CoreRT照著步驟做  Clone CoreRT的專案原始碼  Build它 build[">
 <meta name="keywords" content="工作,C#,AspNet Core">
 <meta property="og:type" content="article">
 <meta property="og:title" content="20180705工作日誌(CoreRT)">
 <meta property="og:url" content="http://yoursite.com/2018/07/05/Work/201807/20180705工作日誌/index.html">
 <meta property="og:site_name" content="Patrick_Hexo">
-<meta property="og:description" content="[接續昨天] NET Core 發布時輕量化 剩下一個.exe檔好棒棒Github : CoreRT Github : CoreRT Pre-Requisites  安裝Visual Studio 2017 包含Visual C++ 安裝CMake(安裝程式中記得把PATH給設定上去)  Github : CoreRT照著步驟做  Clone CoreRT的專案原始碼 Build它 build[.">
+<meta property="og:description" content="[接續昨天] NET Core 發布時輕量化 剩下一個.exe檔好棒棒Github : CoreRT Github : CoreRT Pre-Requisites  安裝Visual Studio 2017 包含Visual C++ 安裝CMake(安裝程式中記得把PATH給設定上去)  Github : CoreRT照著步驟做  Clone CoreRT的專案原始碼  Build它 build[">
 <meta property="og:locale" content="zh-TW">
-<meta property="og:updated_time" content="2019-05-26T03:05:14.000Z">
+<meta property="og:updated_time" content="2019-05-26T03:05:14.512Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="20180705工作日誌(CoreRT)">
-<meta name="twitter:description" content="[接續昨天] NET Core 發布時輕量化 剩下一個.exe檔好棒棒Github : CoreRT Github : CoreRT Pre-Requisites  安裝Visual Studio 2017 包含Visual C++ 安裝CMake(安裝程式中記得把PATH給設定上去)  Github : CoreRT照著步驟做  Clone CoreRT的專案原始碼 Build它 build[.">
+<meta name="twitter:description" content="[接續昨天] NET Core 發布時輕量化 剩下一個.exe檔好棒棒Github : CoreRT Github : CoreRT Pre-Requisites  安裝Visual Studio 2017 包含Visual C++ 安裝CMake(安裝程式中記得把PATH給設定上去)  Github : CoreRT照著步驟做  Clone CoreRT的專案原始碼  Build它 build[">
 
 
 
@@ -459,23 +459,30 @@
 </ol>
 <p><a href="https://github.com/dotnet/corert/blob/master/Documentation/how-to-build-and-run-ilcompiler-in-console-shell-prompt.md" target="_blank" rel="noopener">Github : CoreRT照著步驟做</a></p>
 <ol>
-<li>Clone CoreRT的專案原始碼</li>
-<li>Build它<br> <code>build[.cmd|.sh] clean [Debug|Release]</code><ul>
+<li><p>Clone CoreRT的專案原始碼</p>
+</li>
+<li><p>Build它<br> <code>build[.cmd|.sh] clean [Debug|Release]</code></p>
+<ul>
 <li>應該會跑一段時間</li>
 <li>會Restore所有的Nuget Project</li>
-<li>最重要的ILCompiler放在&lt;repo_root&gt;\bin\<os>.<arch>.<config>\tools.</config></arch></os></li>
+<li>最重要的ILCompiler放在<repo_root>\bin&lt;OS&gt;.<arch>.<config>\tools.</config></arch></repo_root></li>
 <li>自動build &amp; test (我test總會有三個沒過)</li>
 </ul>
 </li>
-<li>別忘記安裝 <a href="https://www.microsoft.com/net/download/windows" target="_blank" rel="noopener">.NET Core SDK</a></li>
-<li>開啟你<del>CMD</del>，ㄜ不是，是x64 Native Tools Command Prompt for VS 2017</li>
-<li>真的要開啟 <strong>x64 Native Tools Command Prompt for VS 2017</strong> 不是CMDㄛ</li>
-<li>開啟 <em>x64 Native Tools Command Prompt for VS 2017</em></li>
+<li><p>別忘記安裝 <a href="https://www.microsoft.com/net/download/windows" target="_blank" rel="noopener">.NET Core SDK</a></p>
+</li>
+<li><p>開啟你<del>CMD</del>，ㄜ不是，是x64 Native Tools Command Prompt for VS 2017</p>
+</li>
+<li><p>真的要開啟 <strong>x64 Native Tools Command Prompt for VS 2017</strong> 不是CMDㄛ</p>
+</li>
+<li><p>開啟 <em>x64 Native Tools Command Prompt for VS 2017</em></p>
+</li>
 <li><p>編輯你的.csproj檔案 加入以下這些</p>
  <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">project</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">Import</span> <span class="attr">Project</span>=<span class="string">"$(MSBuildSDKsPath)\Microsoft.NET.Sdk\Sdk\Sdk.targets"</span> <span class="attr">Condition</span>=<span class="string">" '$(Configuration)' != 'Debug'"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Import</span> <span class="attr">Project</span>=<span class="string">"$(IlcPath)\build\Microsoft.NETCore.Native.targets"</span> <span class="attr">Condition</span>=<span class="string">" '$(Configuration)' != 'Debug'"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">project</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>切到你的專案下 輸入這個</p>
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dotnet publish --configuration Release --runtime win-x64 /p:IlcPath=&lt;repo_root&gt;\bin\&lt;OS&gt;.&lt;arch&gt;.&lt;Config&gt;</span><br></pre></td></tr></table></figure>
+
 <p> 以我的例子來舉例的話就像下面醬子</p>
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dotnet publish --configuration Release --runtime win-x64 /p:IlcPath=D:\Patrick\corert\bin\Windows_NT.x64.Debug</span><br></pre></td></tr></table></figure>
 </li>
