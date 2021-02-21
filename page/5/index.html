@@ -1,23 +1,2216 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-{% block title %}{{ title }}{% if theme.index_with_subtitle and subtitle %} - {{ subtitle }}{% endif %}{% endblock %}
+<link rel="stylesheet" href="/css/main.css">
 
-{% block page_class %}
-  {% if is_home() %}page-home{% endif -%}
-{% endblock %}
 
-{% block content %}
-  <section id="posts" class="posts-expand">
-    {% for post in page.posts %}
-      {{ post_template.render(post, true) }}
-    {% endfor %}
-  </section>
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
 
-  {% include '_partials/pagination.swig' %}
-{% endblock %}
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
 
-{% block sidebar %}
-  {{ sidebar_template.render(false) }}
-{% endblock %}
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Patrick_Hexo">
+<meta property="og:url" content="http://yoursite.com/page/5/index.html">
+<meta property="og:site_name" content="Patrick_Hexo">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:author" content="Patrick">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/page/5/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-TW'
+  };
+</script>
+
+  <title>Patrick_Hexo</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Patrick_Hexo</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首頁</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>歸檔</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/23/Work/201808/20180823%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Patrick">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Patrick_Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/08/23/Work/201808/20180823%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" class="post-title-link" itemprop="url">20180823工作日誌</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2018-08-23 10:14:47" itemprop="dateCreated datePublished" datetime="2018-08-23T10:14:47+08:00">2018-08-23</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2019-05-26 11:05:14" itemprop="dateModified" datetime="2019-05-26T11:05:14+08:00">2019-05-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" itemprop="url" rel="index"><span itemprop="name">工作日誌</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="紀錄一下說不定以後用的到的讀Configuration"><a href="#紀錄一下說不定以後用的到的讀Configuration" class="headerlink" title="紀錄一下說不定以後用的到的讀Configuration"></a>紀錄一下說不定以後用的到的讀Configuration</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var configuration &#x3D; builder.Build();</span><br><span class="line"></span><br><span class="line">Console.WriteLine(&quot;--------------------------&quot;);</span><br><span class="line">var section &#x3D; configuration.GetSection(&quot;Mission_EnemyData&quot;).GetChildren().Where(x &#x3D;&gt; x.GetSection(&quot;Mission_ID&quot;).Value &#x3D;&#x3D; &quot;Mission_002&quot;);</span><br><span class="line">foreach (var s in section)</span><br><span class="line">&#123;</span><br><span class="line">    Console.WriteLine($&quot;Key: &#123;s.Key,-30&#125;  ||  Value: &#123;s.Value&#125; ||   Path: &#123;s.Path&#125;&quot;);</span><br><span class="line">&#125;</span><br><span class="line">Console.WriteLine(&quot;--------------------------&quot;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="在MongoDB用Set加入一個新Field在Document內"><a href="#在MongoDB用Set加入一個新Field在Document內" class="headerlink" title="在MongoDB用Set加入一個新Field在Document內"></a>在MongoDB用Set加入一個新Field在Document內</h2><p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/44685716/how-to-add-new-fields-to-existing-document">StackOverflow : How to add new fields to existing document</a>  </p>
+<h2 id="MongoDB-C-Drive-使用方法"><a href="#MongoDB-C-Drive-使用方法" class="headerlink" title="MongoDB C# Drive 使用方法"></a>MongoDB C# Drive 使用方法</h2><p><a target="_blank" rel="noopener" href="http://mongodb.github.io/mongo-csharp-driver/2.7/getting_started/quick_tour/#insert-a-document">MongoDB Driver Quick Tour</a>  </p>
+<h2 id="C-算時間差距"><a href="#C-算時間差距" class="headerlink" title="C#算時間差距"></a>C#算時間差距</h2><p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/4946316/showing-difference-between-two-datetime-values-in-hours">StackOverflow : Showing Difference between two datetime values in hours</a>  </p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/22/Work/201808/20180822%E5%9C%A8%E5%AE%B6%E8%A3%A1%E6%96%B0%E5%A2%9E%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Patrick">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Patrick_Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/08/22/Work/201808/20180822%E5%9C%A8%E5%AE%B6%E8%A3%A1%E6%96%B0%E5%A2%9E%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" class="post-title-link" itemprop="url">20180822在家裡新增的工作日誌</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2018-08-22 23:51:40" itemprop="dateCreated datePublished" datetime="2018-08-22T23:51:40+08:00">2018-08-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2019-05-26 11:05:14" itemprop="dateModified" datetime="2019-05-26T11:05:14+08:00">2019-05-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" itemprop="url" rel="index"><span itemprop="name">工作日誌</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="RoleManager要先有Role才能新增AddToRoleAsync"><a href="#RoleManager要先有Role才能新增AddToRoleAsync" class="headerlink" title="RoleManager要先有Role才能新增AddToRoleAsync()"></a>RoleManager要先有Role才能新增AddToRoleAsync()</h2><p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/39518491/usermanager-addtoroleasync-error-role-does-not-exist">StackOverflow : userManager.AddToRoleAsync() - Error: role does not exist</a>  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; Add the Admin role to the database</span><br><span class="line">IdentityResult roleResult;</span><br><span class="line">bool adminRoleExists &#x3D; await _roleManager.RoleExistsAsync(&quot;Admin&quot;);</span><br><span class="line">if (!adminRoleExists)</span><br><span class="line">&#123;</span><br><span class="line">    _logger.LogInformation(&quot;Adding Admin role&quot;);</span><br><span class="line">    roleResult &#x3D; await _roleManager.CreateAsync(new IdentityRole(&quot;Admin&quot;));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="C-One-Line-If-Else"><a href="#C-One-Line-If-Else" class="headerlink" title="C# One Line If-Else"></a>C# One Line If-Else</h2><p>每次都忘記<br>return (expression) ? value1 : value2;  </p>
+<h2 id="C-Compiler-Error-Inconsistent-accessibility-parameter-type-is-less-accessible"><a href="#C-Compiler-Error-Inconsistent-accessibility-parameter-type-is-less-accessible" class="headerlink" title="C# Compiler Error : Inconsistent accessibility: parameter type is less accessible"></a>C# Compiler Error : Inconsistent accessibility: parameter type is less accessible</h2><p>原因是public的class內用到了inter的interface<br>安捏母湯  </p>
+<p><a target="_blank" rel="noopener" href="https://www.crifan.com/csharp_inconsistent_accessibility_parameter_type_is_less_accessible_than_method/">C#函数编译出错：Inconsistent accessibility: parameter type ‘aaa.bbb.ccc’ is less accessible than method ‘aaa.bbb.functionName(aaa.bbb.ccc)</a></p>
+<h2 id="C-Check-Object-is-null"><a href="#C-Check-Object-is-null" class="headerlink" title="C# Check Object is null"></a>C# Check Object is null</h2><p>很簡單<br><code>if(data != null)</code>  </p>
+<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/6417902/checking-if-an-object-is-null-in-c-sharp">StackOverflow : Checking if an object is null in C#</a>  </p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/20/Work/201808/20180820%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Patrick">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Patrick_Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/08/20/Work/201808/20180820%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" class="post-title-link" itemprop="url">20180820工作日誌</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2018-08-20 19:41:17" itemprop="dateCreated datePublished" datetime="2018-08-20T19:41:17+08:00">2018-08-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2019-05-26 11:05:14" itemprop="dateModified" datetime="2019-05-26T11:05:14+08:00">2019-05-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" itemprop="url" rel="index"><span itemprop="name">工作日誌</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><a target="_blank" rel="noopener" href="https://github.com/icsharpcode/ILSpy#ilspy-------">https://github.com/icsharpcode/ILSpy#ilspy-------</a></p>
+<p><a target="_blank" rel="noopener" href="https://dotblogs.com.tw/flweblab/2017/11/21/104209">https://dotblogs.com.tw/flweblab/2017/11/21/104209</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/17/Work/201808/20180817-GotoMeetJapanese/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Patrick">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Patrick_Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/08/17/Work/201808/20180817-GotoMeetJapanese/" class="post-title-link" itemprop="url">20180817_GotoMeetJapanese</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2018-08-17 20:58:18" itemprop="dateCreated datePublished" datetime="2018-08-17T20:58:18+08:00">2018-08-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2019-05-26 11:05:14" itemprop="dateModified" datetime="2019-05-26T11:05:14+08:00">2019-05-26</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/16/Work/201808/20180816%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Patrick">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Patrick_Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/08/16/Work/201808/20180816%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" class="post-title-link" itemprop="url">20180816工作日誌</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2018-08-16 19:22:34" itemprop="dateCreated datePublished" datetime="2018-08-16T19:22:34+08:00">2018-08-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2019-05-26 11:05:14" itemprop="dateModified" datetime="2019-05-26T11:05:14+08:00">2019-05-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" itemprop="url" rel="index"><span itemprop="name">工作日誌</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/15/Work/201808/20180815%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Patrick">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Patrick_Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/08/15/Work/201808/20180815%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" class="post-title-link" itemprop="url">20180815工作日誌</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2018-08-15 19:25:16" itemprop="dateCreated datePublished" datetime="2018-08-15T19:25:16+08:00">2018-08-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2019-05-26 11:05:14" itemprop="dateModified" datetime="2019-05-26T11:05:14+08:00">2019-05-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" itemprop="url" rel="index"><span itemprop="name">工作日誌</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/14/Work/201808/20180814%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Patrick">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Patrick_Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/08/14/Work/201808/20180814%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" class="post-title-link" itemprop="url">20180814工作日誌</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2018-08-14 18:16:56" itemprop="dateCreated datePublished" datetime="2018-08-14T18:16:56+08:00">2018-08-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2019-05-26 11:05:14" itemprop="dateModified" datetime="2019-05-26T11:05:14+08:00">2019-05-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" itemprop="url" rel="index"><span itemprop="name">工作日誌</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/C/" itemprop="url" rel="index"><span itemprop="name">C#</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/C/AspNetCore/" itemprop="url" rel="index"><span itemprop="name">AspNetCore</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/C/AspNetCore/DbContext/" itemprop="url" rel="index"><span itemprop="name">DbContext</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="DbContext-Use-WebApi-will-auto-dispose"><a href="#DbContext-Use-WebApi-will-auto-dispose" class="headerlink" title="DbContext Use WebApi will auto dispose"></a>DbContext Use WebApi will auto dispose</h2><p>目前在使用MongoDb時，<br>如果出現Exception，<br>下次Request進來再使用此MongoDb，<br>會出現下列錯誤  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Cannot access a disposed object. A common cause of this error is disposing a context that was resolved from dependency injection and then later trying to use the same context instance elsewhere in your application. This may occur if you are calling Dispose() on the context, or wrapping the context in a using statement. If you are using dependency injection, you should let the dependency injection container take care of disposing context instances.</span><br><span class="line">Object name: &#39;DbContext&#39;.</span><br></pre></td></tr></table></figure>
+
+<p>可能的解決辦法<br><a target="_blank" rel="noopener" href="https://codingfiasco.wordpress.com/2016/05/30/entity-frameworks-dbcontext-disposal-in-web-api-async/">Entity Framework’s DBContext Disposal in Web Api Async</a></p>
+<h2 id="EntityFrameworkCore-MongoDb-Provider-Data欄位每筆資料需相同"><a href="#EntityFrameworkCore-MongoDb-Provider-Data欄位每筆資料需相同" class="headerlink" title="EntityFrameworkCore MongoDb Provider Data欄位每筆資料需相同"></a>EntityFrameworkCore MongoDb Provider Data欄位每筆資料需相同</h2><p>如果A資料有 ID NAME DES，<br>B資料有 ID NAME DES OTHER,<br>則會因為無法DeSerialize而Fail。  </p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/13/Work/201808/20180813%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Patrick">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Patrick_Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/08/13/Work/201808/20180813%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" class="post-title-link" itemprop="url">20180813工作日誌</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2018-08-13 10:39:18" itemprop="dateCreated datePublished" datetime="2018-08-13T10:39:18+08:00">2018-08-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2019-05-26 11:05:14" itemprop="dateModified" datetime="2019-05-26T11:05:14+08:00">2019-05-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" itemprop="url" rel="index"><span itemprop="name">工作日誌</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Configuration的使用方法"><a href="#Configuration的使用方法" class="headerlink" title="Configuration的使用方法"></a>Configuration的使用方法</h2><p><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10195417">John Wu</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/10/Work/201808/20180810%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Patrick">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Patrick_Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/08/10/Work/201808/20180810%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" class="post-title-link" itemprop="url">20180810工作日誌(Friday; Excel; Yaml; C#)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2018-08-10 15:38:06" itemprop="dateCreated datePublished" datetime="2018-08-10T15:38:06+08:00">2018-08-10</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2019-05-26 11:05:14" itemprop="dateModified" datetime="2019-05-26T11:05:14+08:00">2019-05-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" itemprop="url" rel="index"><span itemprop="name">工作日誌</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Excel-To-Yaml-改新版"><a href="#Excel-To-Yaml-改新版" class="headerlink" title="Excel To Yaml 改新版"></a>Excel To Yaml 改新版</h2><p>改成方便我後端使用的版本 YES<br><a target="_blank" rel="noopener" href="https://github.com/BigStar1994123/ExcelToYaml">here</a>  </p>
+<h2 id="改動-Mission-Data"><a href="#改動-Mission-Data" class="headerlink" title="改動 Mission Data"></a>改動 Mission Data</h2><p>把該規劃的規劃個規劃個</p>
+<h2 id="Oh-It-is-a-Friday"><a href="#Oh-It-is-a-Friday" class="headerlink" title="Oh It is a Friday."></a>Oh It is a Friday.</h2><p>So Good.</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/09/Work/201808/20180809%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Patrick">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Patrick_Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/08/09/Work/201808/20180809%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" class="post-title-link" itemprop="url">20180809工作日誌(Refactoring)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2018-08-09 12:31:48" itemprop="dateCreated datePublished" datetime="2018-08-09T12:31:48+08:00">2018-08-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2019-05-26 11:05:14" itemprop="dateModified" datetime="2019-05-26T11:05:14+08:00">2019-05-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" itemprop="url" rel="index"><span itemprop="name">工作日誌</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Controller-Service-Repository"><a href="#Controller-Service-Repository" class="headerlink" title="Controller, Service, Repository"></a>Controller, Service, Repository</h2><p>之前太拘泥於一個Controller就要對單一的Service，<br>和一個Service要對單一的Repository，<br>導致我的邏輯很難寫。  </p>
+<p>Controller應該根據要用哪個服務決定使用哪個Service，<br>再由Service處理商業邏輯。</p>
+<h2 id="4種Repository常見的錯誤"><a href="#4種Repository常見的錯誤" class="headerlink" title="4種Repository常見的錯誤"></a>4種Repository常見的錯誤</h2><p><a target="_blank" rel="noopener" href="https://programmingwithmosh.com/entity-framework/common-mistakes-with-the-repository-pattern/">4 Common Mistakes with the Repository Pattern</a></p>
+<p>別在Repository內做save，<br>不然有可能造成資料不統一，<br>目前我的架構有這個問題，<br>隱性的程式債R，未來要修。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/08/Work/201808/20180808%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Patrick">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Patrick_Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/08/08/Work/201808/20180808%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" class="post-title-link" itemprop="url">20180808工作日誌(Father's Day; MongoDB; Swagger; AspNetCore)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2018-08-08 11:22:44" itemprop="dateCreated datePublished" datetime="2018-08-08T11:22:44+08:00">2018-08-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2019-05-26 11:05:14" itemprop="dateModified" datetime="2019-05-26T11:05:14+08:00">2019-05-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" itemprop="url" rel="index"><span itemprop="name">工作日誌</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="今天是父親節呢"><a href="#今天是父親節呢" class="headerlink" title="今天是父親節呢"></a>今天是父親節呢</h2><p>第一次父親節沒在家裡過呢<br>有種出來打拼的游子的感覺<br>父親節快樂R My Father</p>
+<h2 id="使用MongoDB有時候DbContext會Dispose的問題"><a href="#使用MongoDB有時候DbContext會Dispose的問題" class="headerlink" title="使用MongoDB有時候DbContext會Dispose的問題"></a>使用MongoDB有時候DbContext會Dispose的問題</h2><p><a target="_blank" rel="noopener" href="https://thinkrethink.net/2017/12/22/cannot-access-a-disposed-object-in-asp-net-core-when-injecting-dbcontext/">Cannot access a disposed object in ASP.NET Core when injecting DbContext</a></p>
+<p>我的原因大部分是async的關係，<br>將async改成同步方式就沒問題了。</p>
+<h2 id="使用Swagger-in-Asp-Net-Core"><a href="#使用Swagger-in-Asp-Net-Core" class="headerlink" title="使用Swagger in Asp.Net Core"></a>使用Swagger in Asp.Net Core</h2><p>我是使用 Swashbuckle 這個<br><a target="_blank" rel="noopener" href="https://github.com/domaindrivendev/Swashbuckle.AspNetCore">Github : Swashbuckle.AspNetCore</a></p>
+<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-tw/aspnet/core/tutorials/getting-started-with-swashbuckle?view=aspnetcore-2.1&tabs=visual-studio,visual-studio-xml">MicrosoftDoc : Get started with Swashbuckle and ASP.NET Core</a></p>
+<p>搭配 John wu 的 blog 的中文解說可以很容易理解</p>
+<p><a target="_blank" rel="noopener" href="https://blog.johnwu.cc/article/ironman-day13-asp-net-core-web-api-document-generator-swagger.html">[鐵人賽 Day13] ASP.NET Core 2 系列 - Web API 文件產生器 (Swagger)</a></p>
+<p>使用 SwaggerUI &amp; SwaggerHub 來發布<br><a target="_blank" rel="noopener" href="https://swagger.io/tools/swaggerhub/">SwaggerHub</a></p>
+<p>似乎有可以先寫 swagger文件然後 generate code 的東西，不過還沒研究就是<br><a target="_blank" rel="noopener" href="https://github.com/swagger-api/swagger-codegen">Github : swagger-codegen</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/07/Work/201808/20180807%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Patrick">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Patrick_Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/08/07/Work/201808/20180807%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" class="post-title-link" itemprop="url">20180807工作日誌(Daily)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2018-08-07 19:36:40" itemprop="dateCreated datePublished" datetime="2018-08-07T19:36:40+08:00">2018-08-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2019-05-26 11:05:14" itemprop="dateModified" datetime="2019-05-26T11:05:14+08:00">2019-05-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" itemprop="url" rel="index"><span itemprop="name">工作日誌</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="昨天都偷懶沒寫今天應該也可以吧"><a href="#昨天都偷懶沒寫今天應該也可以吧" class="headerlink" title="昨天都偷懶沒寫今天應該也可以吧"></a>昨天都偷懶沒寫今天應該也可以吧</h2><p>沒錯</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/06/Work/201808/20180806%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Patrick">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Patrick_Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/08/06/Work/201808/20180806%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" class="post-title-link" itemprop="url">20180806工作日誌(Daily)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2018-08-06 19:38:16" itemprop="dateCreated datePublished" datetime="2018-08-06T19:38:16+08:00">2018-08-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2019-05-26 11:05:14" itemprop="dateModified" datetime="2019-05-26T11:05:14+08:00">2019-05-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" itemprop="url" rel="index"><span itemprop="name">工作日誌</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="沒時間寫的日常"><a href="#沒時間寫的日常" class="headerlink" title="沒時間寫的日常"></a>沒時間寫的日常</h2><p>昨天寫很多今天可以偷懶一下</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/03/Work/201808/20180803%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Patrick">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Patrick_Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/08/03/Work/201808/20180803%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" class="post-title-link" itemprop="url">20180803工作日誌(MassTransit; AspNetCore; Dependency Injection; Websocket; Compare Objects)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2018-08-03 10:10:13" itemprop="dateCreated datePublished" datetime="2018-08-03T10:10:13+08:00">2018-08-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2019-05-26 11:05:14" itemprop="dateModified" datetime="2019-05-26T11:05:14+08:00">2019-05-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" itemprop="url" rel="index"><span itemprop="name">工作日誌</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Some-Websites-restored"><a href="#Some-Websites-restored" class="headerlink" title="Some Websites restored"></a>Some Websites restored</h2><p><a target="_blank" rel="noopener" href="http://www.cnblogs.com/edisonchou/p/dnc_microservice_masstransit_foundation_part1.html">MassTransit</a>  </p>
+<p><a target="_blank" rel="noopener" href="https://dotnetcoretutorials.com/2018/03/20/cannot-consume-scoped-service-from-singleton-a-lesson-in-asp-net-core-di-scopes/">Asp.Net Core DI problem: Cannot consume scopred service from singleton</a><br>or <a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/45810851/cannot-consume-scoped-service-imongodbcontext-from-singleton-iactiveusersservice">This</a>  </p>
+<p><a target="_blank" rel="noopener" href="https://blog.johnwu.cc/article/asp-net-core-dependency-injection.html">Asp.Net Core DI</a>  </p>
+<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/dotnet/api/microsoft.extensions.dependencyinjection.entityframeworkservicecollectionextensions.adddbcontext?view=efcore-2.1">Asp.Net Core AddDbContext Extension Method</a>  </p>
+<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-tw/aspnet/core/fundamentals/websockets?view=aspnetcore-2.1">Asp.Net Core Websocket</a>  </p>
+<p><a target="_blank" rel="noopener" href="https://grantwinney.com/how-to-compare-two-objects-testing-for-equality-in-c/">Compare Two Objects</a>  </p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/02/Work/201808/20180802%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Patrick">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Patrick_Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/08/02/Work/201808/20180802%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" class="post-title-link" itemprop="url">20180802工作日誌(Daily)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2018-08-02 18:12:40" itemprop="dateCreated datePublished" datetime="2018-08-02T18:12:40+08:00">2018-08-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2019-05-26 11:05:14" itemprop="dateModified" datetime="2019-05-26T11:05:14+08:00">2019-05-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" itemprop="url" rel="index"><span itemprop="name">工作日誌</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="無標的日常"><a href="#無標的日常" class="headerlink" title="無標的日常"></a>無標的日常</h2><p>昨天是八月的第一天<br>加班到九點半還忙到忘記寫日誌了<br>重構的差不多了<br>現在要把找BUG讓測試CODE都能跑<br>就醬<br>沒啥時間LA<br>Q_Q</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/31/Work/201807/20180731%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Patrick">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Patrick_Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/07/31/Work/201807/20180731%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" class="post-title-link" itemprop="url">20180731工作日誌(Refactoring)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2018-07-31 18:48:46" itemprop="dateCreated datePublished" datetime="2018-07-31T18:48:46+08:00">2018-07-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2019-05-26 11:05:14" itemprop="dateModified" datetime="2019-05-26T11:05:14+08:00">2019-05-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" itemprop="url" rel="index"><span itemprop="name">工作日誌</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Refactoring-ing-ing-ing-ing-ing"><a href="#Refactoring-ing-ing-ing-ing-ing" class="headerlink" title="Refactoring ing ing ing ing ing"></a>Refactoring ing ing ing ing ing</h2><p>無止盡的重構日</p>
+<p>重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構重構</p>
+<p>好累</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/30/Work/201807/20180730%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Patrick">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Patrick_Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/07/30/Work/201807/20180730%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" class="post-title-link" itemprop="url">20180730工作日誌(Todo)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2018-07-30 10:06:48" itemprop="dateCreated datePublished" datetime="2018-07-30T10:06:48+08:00">2018-07-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2019-05-26 11:05:14" itemprop="dateModified" datetime="2019-05-26T11:05:14+08:00">2019-05-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" itemprop="url" rel="index"><span itemprop="name">工作日誌</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="The-most-most-most-most-most-most-most-most"><a href="#The-most-most-most-most-most-most-most-most" class="headerlink" title="The most most most most most most most most"></a>The most most most most most most most most</h2><p>標題無意義</p>
+<p>想想今天要做什麼</p>
+<ol>
+<li>剪頭毛</li>
+<li>去大潤發買生活必需用品</li>
+<li>刷LeetCode三題好了</li>
+<li>看ㄍ書</li>
+</ol>
+<p>大致是醬</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/27/Work/201807/20180727%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Patrick">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Patrick_Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/07/27/Work/201807/20180727%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" class="post-title-link" itemprop="url">20180727工作日誌(BusyDay)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2018-07-27 10:20:21" itemprop="dateCreated datePublished" datetime="2018-07-27T10:20:21+08:00">2018-07-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2019-05-26 11:05:14" itemprop="dateModified" datetime="2019-05-26T11:05:14+08:00">2019-05-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" itemprop="url" rel="index"><span itemprop="name">工作日誌</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Busy-Day-Again"><a href="#Busy-Day-Again" class="headerlink" title="Busy Day Again"></a>Busy Day Again</h2><p>  Another busy day.</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/26/Work/201807/20180726%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Patrick">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Patrick_Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/07/26/Work/201807/20180726%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" class="post-title-link" itemprop="url">20180726工作日誌(Busy)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2018-07-26 10:22:27" itemprop="dateCreated datePublished" datetime="2018-07-26T10:22:27+08:00">2018-07-26</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2019-05-26 11:05:14" itemprop="dateModified" datetime="2019-05-26T11:05:14+08:00">2019-05-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" itemprop="url" rel="index"><span itemprop="name">工作日誌</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Busy-Day"><a href="#Busy-Day" class="headerlink" title="Busy Day"></a>Busy Day</h2><p>忙到沒空寫 Hexo</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/25/Work/201807/20180725%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Patrick">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Patrick_Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/07/25/Work/201807/20180725%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" class="post-title-link" itemprop="url">20180725工作日誌(AspNetCore Identity; VisualStudio)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2018-07-25 10:30:44" itemprop="dateCreated datePublished" datetime="2018-07-25T10:30:44+08:00">2018-07-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2019-05-26 11:05:14" itemprop="dateModified" datetime="2019-05-26T11:05:14+08:00">2019-05-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" itemprop="url" rel="index"><span itemprop="name">工作日誌</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Asp-Net-Core-Identity-好文"><a href="#Asp-Net-Core-Identity-好文" class="headerlink" title="Asp Net Core Identity 好文"></a>Asp Net Core Identity 好文</h2><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/rocketRobin/p/9070684.html">ASP.NET Core Identity Hands On（1）——Identity 初次体验</a></p>
+<h2 id="Visual-Studio-程式碼-展開-縮放-快捷鍵"><a href="#Visual-Studio-程式碼-展開-縮放-快捷鍵" class="headerlink" title="Visual Studio 程式碼 展開/縮放 快捷鍵"></a>Visual Studio 程式碼 展開/縮放 快捷鍵</h2><p>Ctrl +M +M 縮單一的Func</p>
+<p>Ctrl +M +O 縮全部成Func</p>
+<p>Ctrl +M +L 縮全部</p>
+<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/visualstudio/ide/outlining">Here</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/24/Work/201807/20180724%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Patrick">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Patrick_Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/07/24/Work/201807/20180724%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" class="post-title-link" itemprop="url">20180724工作日誌(RestfulAPI; BusyDay)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2018-07-24 10:19:13" itemprop="dateCreated datePublished" datetime="2018-07-24T10:19:13+08:00">2018-07-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2019-05-26 11:05:14" itemprop="dateModified" datetime="2019-05-26T11:05:14+08:00">2019-05-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" itemprop="url" rel="index"><span itemprop="name">工作日誌</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="REST-API-Tutorial"><a href="#REST-API-Tutorial" class="headerlink" title="REST API Tutorial"></a>REST API Tutorial</h2><p>cool website</p>
+<p><a target="_blank" rel="noopener" href="https://www.restapitutorial.com/lessons/httpmethods.html">Rest Api Tutorial</a></p>
+<h2 id="No-Title"><a href="#No-Title" class="headerlink" title="No Title"></a>No Title</h2><p>  Still a busy day.</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/23/Work/201807/20180723%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Patrick">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Patrick_Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/07/23/Work/201807/20180723%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" class="post-title-link" itemprop="url">20180723工作日誌(POSTMAN; JwtToken)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2018-07-23 14:42:56" itemprop="dateCreated datePublished" datetime="2018-07-23T14:42:56+08:00">2018-07-23</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2019-05-26 11:05:14" itemprop="dateModified" datetime="2019-05-26T11:05:14+08:00">2019-05-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" itemprop="url" rel="index"><span itemprop="name">工作日誌</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="JWT-Token-in-POSTMAN-Header"><a href="#JWT-Token-in-POSTMAN-Header" class="headerlink" title="JWT Token in POSTMAN Header"></a>JWT Token in POSTMAN Header</h2><p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/24709944/jwt-token-in-postman-header">StackOverflow : JWT Token in POSTMAN Header</a></p>
+<p><a target="_blank" rel="noopener" href="https://csharpkh.blogspot.com/2018/04/jwt-json-web-token-aspnet-core.html">JWT Json Web Token in Core2.0 Web API</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/20/Work/201807/20180720%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Patrick">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Patrick_Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/07/20/Work/201807/20180720%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" class="post-title-link" itemprop="url">20180720工作日誌(BusyDay)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2018-07-20 12:05:23" itemprop="dateCreated datePublished" datetime="2018-07-20T12:05:23+08:00">2018-07-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2019-05-26 11:05:14" itemprop="dateModified" datetime="2019-05-26T11:05:14+08:00">2019-05-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" itemprop="url" rel="index"><span itemprop="name">工作日誌</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Hello"><a href="#Hello" class="headerlink" title="Hello"></a>Hello</h2><p> A Busy Day.</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/19/Work/201807/20180719%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Patrick">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Patrick_Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/07/19/Work/201807/20180719%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" class="post-title-link" itemprop="url">20180719工作日誌(Azure Cosmos DB; MongoDB;)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2018-07-19 18:08:48" itemprop="dateCreated datePublished" datetime="2018-07-19T18:08:48+08:00">2018-07-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2019-05-26 11:05:14" itemprop="dateModified" datetime="2019-05-26T11:05:14+08:00">2019-05-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" itemprop="url" rel="index"><span itemprop="name">工作日誌</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Azure-CosmosDB-跑-MongoDB-一天要開我六百多塊"><a href="#Azure-CosmosDB-跑-MongoDB-一天要開我六百多塊" class="headerlink" title="Azure CosmosDB 跑 MongoDB 一天要開我六百多塊"></a>Azure CosmosDB 跑 MongoDB 一天要開我六百多塊</h2><p>我的天R 超多</p>
+<h2 id="Service-is-Logic-Layer"><a href="#Service-is-Logic-Layer" class="headerlink" title="Service is Logic Layer?"></a>Service is Logic Layer?</h2><p>  484R?</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/18/Work/201807/20180718%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Patrick">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Patrick_Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/07/18/Work/201807/20180718%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" class="post-title-link" itemprop="url">20180718工作日誌(Azure Cosmos DB; AspNetCore)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2018-07-18 11:59:45" itemprop="dateCreated datePublished" datetime="2018-07-18T11:59:45+08:00">2018-07-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2019-05-26 11:05:14" itemprop="dateModified" datetime="2019-05-26T11:05:14+08:00">2019-05-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" itemprop="url" rel="index"><span itemprop="name">工作日誌</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="測試Azure-CosmosDB-for-MongoDb-amp-SQL-Server"><a href="#測試Azure-CosmosDB-for-MongoDb-amp-SQL-Server" class="headerlink" title="測試Azure CosmosDB for MongoDb &amp; SQL Server"></a>測試Azure CosmosDB for MongoDb &amp; SQL Server</h2><p>可以用ㄝ<br>真棒  </p>
+<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/azure/sql-database/sql-database-get-started-portal">Create an Azure SQL database in the Azure portal</a></p>
+<h2 id="加入-UseApplicationInsights-似乎可以減少無用的Output輸出-讓畫面乾淨點"><a href="#加入-UseApplicationInsights-似乎可以減少無用的Output輸出-讓畫面乾淨點" class="headerlink" title="加入 UseApplicationInsights() 似乎可以減少無用的Output輸出 讓畫面乾淨點"></a>加入 UseApplicationInsights() 似乎可以減少無用的Output輸出 讓畫面乾淨點</h2><p><a target="_blank" rel="noopener" href="https://github.com/windperson/aspnet_websocket_sample/blob/signalr/src/Program.cs#L45">如題</a><br>還沒測試過</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="上一頁"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right" aria-label="下一頁"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Patrick</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">136</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">102</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Patrick</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 強力驅動
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

@@ -1,91 +1,402 @@
-{% extends '_layout.swig' %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-  {% block title %}{#
-  #}{% set page_title_suffix = ' | ' + title %}{#
+<link rel="stylesheet" href="/css/main.css">
 
-  #}{% if page.type === 'categories' and not page.title %}{#
-    #}{{ __('title.category') + page_title_suffix }}{#
-  #}{% elif page.type === 'tags' and not page.title %}{#
-    #}{{ __('title.tag') + page_title_suffix }}{#
-  #}{% elif page.type === 'schedule' and not page.title %}{#
-    #}{{ __('title.schedule') + page_title_suffix }}{#
-  #}{% else %}{#
-    #}{{ page.title + page_title_suffix }}{#
-  #}{% endif %}{#
-#}{% endblock %}
 
-{% block page_class %}page-post-detail{% endblock %}
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
 
-{% block content %}
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
 
-  <div id="posts" class="posts-expand">
-    {##################}
-    {### PAGE BLOCK ###}
-    {##################}
-    <div class="post-block page">
-      {% include '_partials/page/page-header.swig' %}
-      {#################}
-      {### PAGE BODY ###}
-      {#################}
-      <div class="post-body{% if page.direction && page.direction.toLowerCase() === 'rtl' %} rtl{% endif %}">
-        {# tagcloud page support #}
-        {% if page.type === 'tags' %}
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-              {% set visibleTags = 0 %}
-              {% for tag in site.tags %}
-                {% if tag.length %}
-                  {% set visibleTags += 1 %}
-                {% endif %}
-              {% endfor %}
-              {{ _p('counter.tag_cloud', visibleTags) }}
-            </div>
-            <div class="tag-cloud-tags">
-              {% if not theme.tagcloud %}
-                {{ tagcloud({min_font: 12, max_font: 30, amount: 200, color: true, start_color: '#ccc', end_color: '#111'}) }}
-              {% else %}
-                {{ tagcloud({min_font: theme.tagcloud.min, max_font: theme.tagcloud.max, amount: theme.tagcloud.amount, color: true, start_color: theme.tagcloud.start, end_color: theme.tagcloud.end}) }}
-              {% endif %}
-            </div>
-          </div>
-        {% elif page.type === 'categories' %}
-          <div class="category-all-page">
-            <div class="category-all-title">
-              {% set visibleCategories = 0 %}
-              {% for cat in site.categories %}
-                {% if cat.length %}
-                  {% set visibleCategories += 1 %}
-                {% endif %}
-              {% endfor %}
-              {{ _p('counter.categories', visibleCategories) }}
-            </div>
-            <div class="category-all">
-              {{ list_categories() }}
-            </div>
-          </div>
-        {% elif page.type === 'schedule' %}
-          {% include 'schedule.swig' %}
-        {% else %}
-          {{ page.content }}
-        {% endif %}
-      </div>
-      {#####################}
-      {### END PAGE BODY ###}
-      {#####################}
+  <meta name="description" content="Dan-Fax 日本東京熱 Day 1出發Dan-Fax第一次出遊就出發去日本玩啦還一次玩七天真是特別舒爽訂好機票訂好房間訂好行動電源就可以出發啦 我們搭的是香草航空的紅眼班機大概日本時間七點半到年輕人熬個夜就多一天可以玩輕輕鬆鬆啦  (ゝ∀･)你問我為什麼機票有點貴 這不好說某卡比獸鬼父護照弄了一個月    附上一個智障開心的要前往登機 好的 安全的下了飛機天空陰陰的舒服的好天氣填完兩張外國人要">
+<meta property="og:type" content="website">
+<meta property="og:title" content="DanFax 日本東京好熱第一天">
+<meta property="og:url" content="http://yoursite.com/Archived/DanFax/DanFax-Japan-Tokyo-Day1.html">
+<meta property="og:site_name" content="Patrick_Hexo">
+<meta property="og:description" content="Dan-Fax 日本東京熱 Day 1出發Dan-Fax第一次出遊就出發去日本玩啦還一次玩七天真是特別舒爽訂好機票訂好房間訂好行動電源就可以出發啦 我們搭的是香草航空的紅眼班機大概日本時間七點半到年輕人熬個夜就多一天可以玩輕輕鬆鬆啦  (ゝ∀･)你問我為什麼機票有點貴 這不好說某卡比獸鬼父護照弄了一個月    附上一個智障開心的要前往登機 好的 安全的下了飛機天空陰陰的舒服的好天氣填完兩張外國人要">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://i.imgur.com/b0stIpC.jpg">
+<meta property="og:image" content="https://i.imgur.com/Jaa2SeW.jpg">
+<meta property="og:image" content="https://i.imgur.com/QoBj1AU.jpg">
+<meta property="og:image" content="https://i.imgur.com/jn7XMEn.jpg">
+<meta property="og:image" content="https://i.imgur.com/lf56yfZ.jpg">
+<meta property="og:image" content="https://i.imgur.com/24w6OMd.jpg">
+<meta property="og:image" content="https://i.imgur.com/UDRpKqC.jpg">
+<meta property="og:image" content="https://i.imgur.com/hjIi6pO.jpg">
+<meta property="og:image" content="https://i.imgur.com/udbPlRD.jpg">
+<meta property="og:image" content="https://imgur.com/kpcaW9V.jpg">
+<meta property="og:image" content="https://imgur.com/Fxgie3S.jpg">
+<meta property="og:image" content="https://imgur.com/jZojxSU.jpg">
+<meta property="og:image" content="https://imgur.com/sMp20hc.jpg">
+<meta property="article:published_time" content="2019-01-02T15:07:24.000Z">
+<meta property="article:modified_time" content="2019-05-26T03:05:14.000Z">
+<meta property="article:author" content="Patrick">
+<meta property="article:tag" content="DanFax">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/b0stIpC.jpg">
+
+<link rel="canonical" href="http://yoursite.com/Archived/DanFax/DanFax-Japan-Tokyo-Day1">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : false,
+    lang   : 'zh-TW'
+  };
+</script>
+
+  <title>DanFax 日本東京好熱第一天 | Patrick_Hexo
+</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
-    {% include '_partials/page/breadcrumb.swig' %}
-    {######################}
-    {### END PAGE BLOCK ###}
-    {######################}
   </div>
 
-{% endblock %}
+  <div class="site-meta">
 
-{% block sidebar %}
-  {{ sidebar_template.render(false) }}
-{% endblock %}
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Patrick_Hexo</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首頁</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>歸檔</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+  
+  
+
+          <div class="content page posts-expand">
+            
+
+    
+    
+    
+    <div class="post-block" lang="zh-TW">
+      <header class="post-header">
+
+<h1 class="post-title" itemprop="name headline">DanFax 日本東京好熱第一天
+</h1>
+
+<div class="post-meta">
+  
+  <ul class="breadcrumb">
+          
+            <li><a href="/Archived/">ARCHIVED</a></li>
+            <li><a href="/Archived/DanFax/">DANFAX</a></li>
+            <li>DANFAX-JAPAN-TOKYO-DAY1</li>
+          
+  </ul>
+
+</div>
+
+</header>
+
+      
+      
+      
+      <div class="post-body">
+          <h1 id="Dan-Fax-日本東京熱-Day-1"><a href="#Dan-Fax-日本東京熱-Day-1" class="headerlink" title="Dan-Fax 日本東京熱 Day 1"></a>Dan-Fax 日本東京熱 Day 1</h1><h2 id="出發"><a href="#出發" class="headerlink" title="出發"></a>出發</h2><p>Dan-Fax第一次出遊就出發去日本玩啦<br>還一次玩七天<br>真是特別舒爽<br>訂好機票訂好房間訂好行動電源就可以出發啦<br><img src="https://i.imgur.com/b0stIpC.jpg" alt="機票"></p>
+<p>我們搭的是香草航空的紅眼班機<br>大概日本時間七點半到<br>年輕人熬個夜就多一天可以玩<br>輕輕鬆鬆啦  (ゝ∀･)<br>你問我為什麼機票有點貴 這不好說<br><del>某卡比獸鬼父護照弄了一個月</del>  </p>
+<p><img src="https://i.imgur.com/Jaa2SeW.jpg" alt="黃智障"></p>
+<p>附上一個智障開心的要前往登機<br><br/> <br/><br>好的 安全的下了飛機<br>天空陰陰的舒服的好天氣<br>填完兩張外國人要填的表格後就正式進到日本啦<br>第一站我們決定不往東京走<br>往一個號稱小江戶的地方  </p>
+<h2 id="佐原"><a href="#佐原" class="headerlink" title="佐原"></a>佐原</h2><p><img src="https://i.imgur.com/QoBj1AU.jpg" alt="路線圖"></p>
+<p>大概這麼去吧<br>會經過成田這個大站轉車<br>不過要轉JR我們差點還坐錯<br>喔對惹上面那個橘色衣服的<br>投了置物櫃兩次 500* 2<br>共1000日圓放他的行李  </p>
+<p><img src="https://i.imgur.com/jn7XMEn.jpg" alt="87坐錯"></p>
+<p>一群87差點坐錯的地方<br>然後去退票ㄏㄏ  </p>
+<p><img src="https://i.imgur.com/lf56yfZ.jpg" alt="睡覺圖"></p>
+<p>飛機上沒睡好<br>不小心最睡著惹  </p>
+<p><img src="https://i.imgur.com/24w6OMd.jpg" alt="到佐原啦"></p>
+<p>到啦  </p>
+<p><img src="https://i.imgur.com/UDRpKqC.jpg" alt="雙馬尾便利商店正妹"></p>
+<p>好餓 先去便利商店買個吃的<br>順便跟可愛雙馬尾店員合照<br>阿手差點都要牽下去啦 (≧∀≦)ゞ<br><br/> <br/><br>佐原真是個古色古香的好地方<br>一路上幾乎沒什麼觀光客呢<br>不喜歡陸客的可以來這<br>街道上都有垂垂的樹<br>應該是柳樹吧?<br>隨便啦反正很漂亮<br>搭配日本鄉村的建築<br>差點以為走進古代了呢  </p>
+<p><img src="https://i.imgur.com/hjIi6pO.jpg" alt="佐原三人"></p>
+<p>很開心的合照<br>有建築有柳樹有天空有河有橋  </p>
+<p><img src="https://i.imgur.com/udbPlRD.jpg" alt="會噴水的橋"></p>
+<p>剛好遇到會噴水的橋<br>聽說噴水的時間不固定  </p>
+<p><img src="https://imgur.com/kpcaW9V.jpg" alt="佐原風景"></p>
+<p>風景很漂亮<br>幹哪個智障的手  </p>
+<p><img src="https://imgur.com/Fxgie3S.jpg" alt="拜個神社"></p>
+<p>逛一逛有經過一個神社呢<br>google了一下怎麼拜之後就入境隨俗的跟著拜惹  </p>
+<p><img src="https://imgur.com/jZojxSU.jpg" alt="八坂神社"></p>
+<p>好像叫做八坂神社<br>京都也有一個八坂神社呢！  </p>
+<h2 id="吃鰻魚飯"><a href="#吃鰻魚飯" class="headerlink" title="吃鰻魚飯"></a>吃鰻魚飯</h2><p><img src="https://imgur.com/sMp20hc.jpg" alt="鰻魚飯的店"></p>
+<p>午餐吃這個<br>聽說是有名老店<br>就點了一個3200日圓的鰻魚飯<br>吃起來跟吉野家味道差不多ㄏㄏ  </p>
+<p>佐原差不多就到這啦<br>原本計畫還要去佐倉呢<br>計畫總是趕不上變化<br>大夥兒熬夜下飛機很累就決定直衝希爾頓飯店休息啦<br>第二天去迪士尼玩囉</p>
+
+      </div>
+      
+      
+      
+    </div>
+    
+  <ul class="breadcrumb">
+          
+            <li><a href="/Archived/">ARCHIVED</a></li>
+            <li><a href="/Archived/DanFax/">DANFAX</a></li>
+            <li>DANFAX-JAPAN-TOKYO-DAY1</li>
+          
+  </ul>
+
+    
+    
+    
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Dan-Fax-%E6%97%A5%E6%9C%AC%E6%9D%B1%E4%BA%AC%E7%86%B1-Day-1"><span class="nav-number">1.</span> <span class="nav-text">Dan-Fax 日本東京熱 Day 1</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BA%E7%99%BC"><span class="nav-number">1.1.</span> <span class="nav-text">出發</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%90%E5%8E%9F"><span class="nav-number">1.2.</span> <span class="nav-text">佐原</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%83%E9%B0%BB%E9%AD%9A%E9%A3%AF"><span class="nav-number">1.3.</span> <span class="nav-text">吃鰻魚飯</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Patrick</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">136</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">102</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Patrick</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 強力驅動
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

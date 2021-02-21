@@ -1,23 +1,419 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-{% block title %}{{ page.title }} | {{ title }}{% endblock %}
+<link rel="stylesheet" href="/css/main.css">
 
-{% block page_class %}page-post-detail{% endblock %}
 
-{% block content %}
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
 
-  <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="Saddddddnesssss 憂傷的星期一沒4 EntityFramework Delete一筆資料Github : Delete a single record from Entity Framework?   OverPass API 語法暫存用這個網址資料是最新最正確的: http:&#x2F;&#x2F;overpass-turbo.eu&#x2F;但沒有Https捏，哈豬咖西捏另一個資料整個五年前吧: https:">
+<meta property="og:type" content="article">
+<meta property="og:title" content="20180903工作日誌">
+<meta property="og:url" content="http://yoursite.com/2018/09/03/Work/201809/20180903%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/index.html">
+<meta property="og:site_name" content="Patrick_Hexo">
+<meta property="og:description" content="Saddddddnesssss 憂傷的星期一沒4 EntityFramework Delete一筆資料Github : Delete a single record from Entity Framework?   OverPass API 語法暫存用這個網址資料是最新最正確的: http:&#x2F;&#x2F;overpass-turbo.eu&#x2F;但沒有Https捏，哈豬咖西捏另一個資料整個五年前吧: https:">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2018-09-03T09:42:49.000Z">
+<meta property="article:modified_time" content="2019-05-26T03:05:14.523Z">
+<meta property="article:author" content="Patrick">
+<meta property="article:tag" content="C#">
+<meta property="article:tag" content="EntityFramework">
+<meta property="article:tag" content="工作">
+<meta property="article:tag" content="Overpass API">
+<meta property="article:tag" content="Monday">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2018/09/03/Work/201809/20180903%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-TW'
+  };
+</script>
+
+  <title>20180903工作日誌 | Patrick_Hexo</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
   </div>
 
-{% endblock %}
+  <div class="site-meta">
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Patrick_Hexo</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首頁</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>歸檔</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/03/Work/201809/20180903%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Patrick">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Patrick_Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          20180903工作日誌
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2018-09-03 17:42:49" itemprop="dateCreated datePublished" datetime="2018-09-03T17:42:49+08:00">2018-09-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2019-05-26 11:05:14" itemprop="dateModified" datetime="2019-05-26T11:05:14+08:00">2019-05-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" itemprop="url" rel="index"><span itemprop="name">工作日誌</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="Saddddddnesssss-憂傷的星期一"><a href="#Saddddddnesssss-憂傷的星期一" class="headerlink" title="Saddddddnesssss 憂傷的星期一"></a>Saddddddnesssss 憂傷的星期一</h2><p>沒4</p>
+<h2 id="EntityFramework-Delete一筆資料"><a href="#EntityFramework-Delete一筆資料" class="headerlink" title="EntityFramework Delete一筆資料"></a>EntityFramework Delete一筆資料</h2><p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/17723276/delete-a-single-record-from-entity-framework">Github : Delete a single record from Entity Framework?</a>  </p>
+<h2 id="OverPass-API-語法暫存"><a href="#OverPass-API-語法暫存" class="headerlink" title="OverPass API 語法暫存"></a>OverPass API 語法暫存</h2><p>用這個網址資料是最新最正確的: <a target="_blank" rel="noopener" href="http://overpass-turbo.eu/">http://overpass-turbo.eu/</a><br>但沒有Https捏，哈豬咖西捏<br>另一個資料整個五年前吧: <a target="_blank" rel="noopener" href="https://overpass.nchc.org.tw/overpass-turbo/">https://overpass.nchc.org.tw/overpass-turbo/</a><br>沒4別用  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[timeout:900];</span><br><span class="line">area[&quot;ISO3166-1&quot;&#x3D;&quot;TW&quot;]-&gt;.searchArea;</span><br><span class="line">(</span><br><span class="line">&#x2F;&#x2F;node(1762782394);</span><br><span class="line"> node[&quot;leisure&quot; &#x3D; &quot;park&quot;](area.searchArea);</span><br><span class="line"> way[&quot;leisure&quot; &#x3D; &quot;park&quot;](area.searchArea);</span><br><span class="line"> relation[&quot;leisure&quot; &#x3D; &quot;park&quot;](area.searchArea);</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">&gt;; &#x2F;&#x2F;把所有way的節點都列出在上面，但無詳細資訊</span><br><span class="line"></span><br><span class="line">out meta;</span><br></pre></td></tr></table></figure>
+
+<h2 id="ISO3166-1-原來是這玩意兒"><a href="#ISO3166-1-原來是這玩意兒" class="headerlink" title="ISO3166-1 原來是這玩意兒"></a>ISO3166-1 原來是這玩意兒</h2><p><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/zh-tw/ISO_3166-1">Wikipedia : ISO_3166-1</a></p>
+<h2 id="OverPass-Api-網址用誰兒"><a href="#OverPass-Api-網址用誰兒" class="headerlink" title="OverPass Api 網址用誰兒"></a>OverPass Api 網址用誰兒</h2><p><a target="_blank" rel="noopener" href="https://wiki.openstreetmap.org/wiki/Overpass_API">https://wiki.openstreetmap.org/wiki/Overpass_API</a></p>
+<h2 id="C-處理string內要有”上引號”"><a href="#C-處理string內要有”上引號”" class="headerlink" title="C#處理string內要有”上引號”"></a>C#處理string內要有”上引號”</h2><p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/3458046/how-to-include-quotes-in-a-string">StackOverflow : How to include quotes in a string</a></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/C/" rel="tag"># C#</a>
+              <a href="/tags/EntityFramework/" rel="tag"># EntityFramework</a>
+              <a href="/tags/%E5%B7%A5%E4%BD%9C/" rel="tag"># 工作</a>
+              <a href="/tags/Overpass-API/" rel="tag"># Overpass API</a>
+              <a href="/tags/Monday/" rel="tag"># Monday</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2018/08/31/Work/201808/20180831%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" rel="prev" title="20180831工作日誌">
+      <i class="fa fa-chevron-left"></i> 20180831工作日誌
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2018/09/04/Work/201809/20180904%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" rel="next" title="20180904工作日誌">
+      20180904工作日誌 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Saddddddnesssss-%E6%86%82%E5%82%B7%E7%9A%84%E6%98%9F%E6%9C%9F%E4%B8%80"><span class="nav-number">1.</span> <span class="nav-text">Saddddddnesssss 憂傷的星期一</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#EntityFramework-Delete%E4%B8%80%E7%AD%86%E8%B3%87%E6%96%99"><span class="nav-number">2.</span> <span class="nav-text">EntityFramework Delete一筆資料</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OverPass-API-%E8%AA%9E%E6%B3%95%E6%9A%AB%E5%AD%98"><span class="nav-number">3.</span> <span class="nav-text">OverPass API 語法暫存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ISO3166-1-%E5%8E%9F%E4%BE%86%E6%98%AF%E9%80%99%E7%8E%A9%E6%84%8F%E5%85%92"><span class="nav-number">4.</span> <span class="nav-text">ISO3166-1 原來是這玩意兒</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OverPass-Api-%E7%B6%B2%E5%9D%80%E7%94%A8%E8%AA%B0%E5%85%92"><span class="nav-number">5.</span> <span class="nav-text">OverPass Api 網址用誰兒</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C-%E8%99%95%E7%90%86string%E5%85%A7%E8%A6%81%E6%9C%89%E2%80%9D%E4%B8%8A%E5%BC%95%E8%99%9F%E2%80%9D"><span class="nav-number">6.</span> <span class="nav-text">C#處理string內要有”上引號”</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Patrick</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">136</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">102</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Patrick</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 強力驅動
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

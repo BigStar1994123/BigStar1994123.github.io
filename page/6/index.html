@@ -1,23 +1,1223 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-{% block title %}{{ title }}{% if theme.index_with_subtitle and subtitle %} - {{ subtitle }}{% endif %}{% endblock %}
+<link rel="stylesheet" href="/css/main.css">
 
-{% block page_class %}
-  {% if is_home() %}page-home{% endif -%}
-{% endblock %}
 
-{% block content %}
-  <section id="posts" class="posts-expand">
-    {% for post in page.posts %}
-      {{ post_template.render(post, true) }}
-    {% endfor %}
-  </section>
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
 
-  {% include '_partials/pagination.swig' %}
-{% endblock %}
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
 
-{% block sidebar %}
-  {{ sidebar_template.render(false) }}
-{% endblock %}
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Patrick_Hexo">
+<meta property="og:url" content="http://yoursite.com/page/6/index.html">
+<meta property="og:site_name" content="Patrick_Hexo">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:author" content="Patrick">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/page/6/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-TW'
+  };
+</script>
+
+  <title>Patrick_Hexo</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Patrick_Hexo</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首頁</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>歸檔</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/17/Work/201807/20180717%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Patrick">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Patrick_Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/07/17/Work/201807/20180717%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" class="post-title-link" itemprop="url">20180717工作日誌(MongoDB; Azure Cosmos DB)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2018-07-17 12:19:30" itemprop="dateCreated datePublished" datetime="2018-07-17T12:19:30+08:00">2018-07-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2019-05-26 11:05:14" itemprop="dateModified" datetime="2019-05-26T11:05:14+08:00">2019-05-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" itemprop="url" rel="index"><span itemprop="name">工作日誌</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="ObjectId-VS-BsonObjectId-VS-BsonRepresentation"><a href="#ObjectId-VS-BsonObjectId-VS-BsonRepresentation" class="headerlink" title="ObjectId VS BsonObjectId VS BsonRepresentation"></a>ObjectId VS BsonObjectId VS BsonRepresentation</h2><p>這個解答解釋得很棒</p>
+<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/38871416/difference-between-decorating-a-property-in-c-sharp-with-bsonrepresentationbson">StackOverflow : Difference between decorating a property in C# with BsonRepresentation(BsonType.ObjectId) vs BsonId vs ObjectId</a></p>
+<h2 id="Azure-Cosmos-DB-MongoDb-從零開始"><a href="#Azure-Cosmos-DB-MongoDb-從零開始" class="headerlink" title="Azure Cosmos DB MongoDb 從零開始"></a>Azure Cosmos DB MongoDb 從零開始</h2><p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/azure/cosmos-db/sql-api-dotnetcore-get-started">Microsoft Docs : Azure Cosmos DB: Getting started with the SQL API and .NET Core</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/17/Work/201807/20180716%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Patrick">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Patrick_Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/07/17/Work/201807/20180716%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" class="post-title-link" itemprop="url">20180716工作日誌(MongoDB; DesignPattern)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2018-07-17 12:15:52" itemprop="dateCreated datePublished" datetime="2018-07-17T12:15:52+08:00">2018-07-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2019-05-26 11:05:14" itemprop="dateModified" datetime="2019-05-26T11:05:14+08:00">2019-05-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" itemprop="url" rel="index"><span itemprop="name">工作日誌</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="今天突發奇想新的DB架構來改"><a href="#今天突發奇想新的DB架構來改" class="headerlink" title="今天突發奇想新的DB架構來改"></a>今天突發奇想新的DB架構來改</h2><p>MongoDb One-to-One Relationship 之後呢<br>在右One做反序列化<br>因為怕左One超過16MB上限<br>所以要用Relation分出去<br>又希望查詢快速所以在右One做反序列化  </p>
+<hr>
+<h2 id="ASP-NET-DesignPattern-WebAPI-Services-Repositories"><a href="#ASP-NET-DesignPattern-WebAPI-Services-Repositories" class="headerlink" title="ASP NET DesignPattern WebAPI, Services, Repositories"></a>ASP NET DesignPattern WebAPI, Services, Repositories</h2><p>一個網站有範例有解釋<br>教你一步一步實作此Design Pattern<br><a target="_blank" rel="noopener" href="http://www.forevolve.com/en/articles/2017/08/11/design-patterns-web-api-service-and-repository-part-1/">Design Patterns: Asp.Net Core Web API, services, and repositories</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/13/Work/201807/20180713%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Patrick">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Patrick_Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/07/13/Work/201807/20180713%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" class="post-title-link" itemprop="url">20180713工作日誌(Friday)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2018-07-13 11:00:00" itemprop="dateCreated datePublished" datetime="2018-07-13T11:00:00+08:00">2018-07-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2019-05-26 11:05:14" itemprop="dateModified" datetime="2019-05-26T11:05:14+08:00">2019-05-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" itemprop="url" rel="index"><span itemprop="name">工作日誌</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="今天是美好的星期五呢"><a href="#今天是美好的星期五呢" class="headerlink" title="今天是美好的星期五呢"></a>今天是美好的星期五呢</h2><h3 id="沒內容的星期五呢"><a href="#沒內容的星期五呢" class="headerlink" title="沒內容的星期五呢"></a>沒內容的星期五呢</h3><h4 id="試著移植google-blog的東西過來好了"><a href="#試著移植google-blog的東西過來好了" class="headerlink" title="試著移植google blog的東西過來好了"></a>試著移植google blog的東西過來好了</h4>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/12/Work/201807/20180712%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Patrick">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Patrick_Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/07/12/Work/201807/20180712%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" class="post-title-link" itemprop="url">20180712工作日誌(AspNetCore; MongoDB; EFCodeFirst)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2018-07-12 14:54:54" itemprop="dateCreated datePublished" datetime="2018-07-12T14:54:54+08:00">2018-07-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2019-05-26 11:05:14" itemprop="dateModified" datetime="2019-05-26T11:05:14+08:00">2019-05-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" itemprop="url" rel="index"><span itemprop="name">工作日誌</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="AspNetCore-2-1-2-安全性更新"><a href="#AspNetCore-2-1-2-安全性更新" class="headerlink" title="AspNetCore 2.1.2 安全性更新"></a>AspNetCore 2.1.2 安全性更新</h2><p><a target="_blank" rel="noopener" href="https://github.com/dotnet/core/blob/master/release-notes/2.1/2.1.2.md">Github : Core</a></p>
+<p>記得更新</p>
+<hr>
+<h2 id="EFCore-MongoDB-原來無法處理關聯性的TABLE"><a href="#EFCore-MongoDB-原來無法處理關聯性的TABLE" class="headerlink" title="EFCore-MongoDB 原來無法處理關聯性的TABLE"></a>EFCore-MongoDB 原來無法處理關聯性的TABLE</h2><p>我發現我無法直接增加關聯性的表格進MongoDB內，<br>在其中一個issue內也遭遇到了和我一樣的問題，<br>作者表示： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">EFCore-MongoDB is just a thin adapter between EFCore&#39;s Metadata system and the official MongoDB C# driver, which has no concept of relationships that aren&#39;t explicitly in the model.</span><br></pre></td></tr></table></figure>
+
+<p>好的<br>只能用較複雜的邏輯去包了<br>嗚嗚</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/crhairr/EntityFrameworkCore.MongoDb/issues/22">那篇ISSUE</a></p>
+<p>那要怎麼做呢<br>找到了這篇  </p>
+<p><a target="_blank" rel="noopener" href="https://blog.toright.com/posts/4483/mongodb-schema-%E8%A8%AD%E8%A8%88%E6%8C%87%E5%8D%97.html">MongoDB設計指南</a>  </p>
+<p>應該會使用 <code>One-to-Many 多量級關聯模式 (Child-Referencing)</code></p>
+<p>試試看吧！</p>
+<hr>
+<h2 id="EF-Code-First-的-DatabaseGenerated"><a href="#EF-Code-First-的-DatabaseGenerated" class="headerlink" title="EF Code First 的 DatabaseGenerated"></a>EF Code First 的 DatabaseGenerated</h2><p>自動給KEY值或不要自動給KEY值的東西</p>
+<p><a target="_blank" rel="noopener" href="https://dotblogs.com.tw/mileslin/2016/08/02/011459">Miles MS.HelloWorld : [Entity Framework][Code First]DatabaseGenerated</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/11/Work/201807/20180711%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Patrick">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Patrick_Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/07/11/Work/201807/20180711%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" class="post-title-link" itemprop="url">20180711工作日誌(EntityFramework; MongoDB; Owend Entity Types; Console Build Webhost)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2018-07-11 11:13:41" itemprop="dateCreated datePublished" datetime="2018-07-11T11:13:41+08:00">2018-07-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2019-05-26 11:05:14" itemprop="dateModified" datetime="2019-05-26T11:05:14+08:00">2019-05-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" itemprop="url" rel="index"><span itemprop="name">工作日誌</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="接昨日-Provider-與-IdentityUser-衝突-PrimaryKey-衝突"><a href="#接昨日-Provider-與-IdentityUser-衝突-PrimaryKey-衝突" class="headerlink" title="接昨日(Provider 與 IdentityUser 衝突 PrimaryKey 衝突)"></a>接昨日(Provider 與 IdentityUser 衝突 PrimaryKey 衝突)</h2><p>台北市沒放颱風假呢</p>
+<p>只好使用另一招了</p>
+<h3 id="SQL分離法"><a href="#SQL分離法" class="headerlink" title="SQL分離法"></a>SQL分離法</h3><p>把Identity那邊的放在支援的MSSQL上</p>
+<p>把GameData部分放在MongoDb上</p>
+<p>Try Try 看吧</p>
+<p>今天還要加入LOG TABLE呢</p>
+<hr>
+<h2 id="在同一個Project內使用兩個Context"><a href="#在同一個Project內使用兩個Context" class="headerlink" title="在同一個Project內使用兩個Context"></a>在同一個Project內使用兩個Context</h2><p><a target="_blank" rel="noopener" href="https://www.codeproject.com/Articles/1237253/Entity-Framework-Core-with-multiple-DB-Contexts-Sc">CODE PROJECT : Entity Framework Core with multiple DB Contexts, Schemas and Projects</a></p>
+<p>另一個Context改用MongoDb就行囉</p>
+<hr>
+<h2 id="EF-Code-2-0-Owend-Entity-Types"><a href="#EF-Code-2-0-Owend-Entity-Types" class="headerlink" title="EF Code 2.0 Owend Entity Types"></a>EF Code 2.0 Owend Entity Types</h2><p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-tw/ef/core/modeling/owned-entities">MS Docs : Owned Entity Types</a></p>
+<p>意思就是說呢<br>使用 FluentAPI &gt;&gt; OwnsOne 在 OnModalCreating 的時候<br>會直接將一個CLASS包進去指定的CLASS內<br>而不用ForeignKey去做連結<br>真方便  </p>
+<hr>
+<h2 id="AspNetCore-Console-App-Build-a-WebHost"><a href="#AspNetCore-Console-App-Build-a-WebHost" class="headerlink" title="AspNetCore Console App Build a WebHost"></a>AspNetCore Console App Build a WebHost</h2><p>記得在 .csproj 內 加入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;ItemGroup&gt;</span><br><span class="line">  &lt;PackageReference Include&#x3D;&quot;Microsoft.AspNetCore.App&quot; &#x2F;&gt;</span><br><span class="line">&lt;&#x2F;ItemGroup&gt;</span><br></pre></td></tr></table></figure>
+
+<p>搭配使用<br><a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-tw/aspnet/core/fundamentals/host/web-host?view=aspnetcore-2.1&tabs=aspnetcore2x">MS Docs : ASP.NET Core Web Host</a></p>
+<hr>
+<h2 id="C-繼承的時候中間有THIS是怎麼回事"><a href="#C-繼承的時候中間有THIS是怎麼回事" class="headerlink" title="C# 繼承的時候中間有THIS是怎麼回事"></a>C# 繼承的時候中間有THIS是怎麼回事</h2><p>簡單來說就是為了簡化Constructor啦<br><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/3797528/base-and-this-constructors-best-practices">StackOverflow : base() and this() constructors best practices
+</a></p>
+<hr>
+<h2 id="EF-Code-命令列指令在這兒"><a href="#EF-Code-命令列指令在這兒" class="headerlink" title="EF Code 命令列指令在這兒"></a>EF Code 命令列指令在這兒</h2><p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-tw/ef/core/miscellaneous/cli/dotnet">MS Docs : EF Core .NET Command-line Tools</a></p>
+<p>今天用到<br>dotnet ef migrations -r –context<br>dotnet ef database drop</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/10/Work/201807/20180710%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Patrick">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Patrick_Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/07/10/Work/201807/20180710%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" class="post-title-link" itemprop="url">20180710工作日誌(EntityFramework; MongoDB; Typhoon)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2018-07-10 15:05:56" itemprop="dateCreated datePublished" datetime="2018-07-10T15:05:56+08:00">2018-07-10</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2019-05-26 11:05:14" itemprop="dateModified" datetime="2019-05-26T11:05:14+08:00">2019-05-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" itemprop="url" rel="index"><span itemprop="name">工作日誌</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="接昨日-在-EF-Core-上使用-MongoDB"><a href="#接昨日-在-EF-Core-上使用-MongoDB" class="headerlink" title="接昨日 (在 EF Core 上使用 MongoDB)"></a>接昨日 (在 EF Core 上使用 MongoDB)</h2><p><a target="_blank" rel="noopener" href="https://github.com/crhairr/EntityFrameworkCore.MongoDb">EntityFrameworkCore.MongoDb</a></p>
+<p>範例CODE跑起來OK</p>
+<p>套到自己的CODE上出現錯誤</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">System.InvalidOperationException: </span><br><span class="line">&#39;A key cannot be configured on &#39;PocketHiAccount&#39;</span><br><span class="line">because it is a derived type.</span><br><span class="line">The key must be configured on the root type &#39;IdentityUser&lt;Guid&gt;&#39;. </span><br><span class="line">If you did not intend for &#39;IdentityUser&lt;Guid&gt;&#39; to be included in the model, </span><br><span class="line">ensure that it is not included in a DbSet property on your context, </span><br><span class="line">referenced in a configuration call to ModelBuilder, </span><br><span class="line">or referenced from a navigation property on a type that is included in the model.&#39;</span><br></pre></td></tr></table></figure>
+
+<p>金拍垮</p>
+<p>問題原因猜測：<br><code>EFCode-MongoDB Provider &amp; IdentityDbContext 在PrimaryKey部分會衝突</code>  </p>
+<p>在範例Code內是使用 MongoDB 的 ObjectId<br>與IdentityUser&lt;Tkey&gt; 衝突到<br>且範例Code是使用DbContext<br>可能跟這個有關係</p>
+<p>所以試著在範例CODE的 DbContext 改成 IdentityDbContext  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public class ZooDbContext : IdentityDbContext&lt;IdentiryUser, IdentityRole, ObjectId&gt;</span><br></pre></td></tr></table></figure>
+<p>還是錯 ㄏㄏ</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">System.InvalidOperationException: </span><br><span class="line">A key cannot be configured on &#39;PocketHiAccount&#39; because it is a derived type. The key must be configured on the root type &#39;IdentityUser&lt;ObjectId&gt;&#39;. If you did not intend for &#39;IdentityUser&lt;ObjectId&gt;&#39; to be included in the model, ensure that it is not included in a DbSet property on your context, referenced in a configuration call to ModelBuilder, or referenced from a navigation property on a type that is included in the model.</span><br></pre></td></tr></table></figure>
+
+<p>Q_Q</p>
+<h2 id="颱風來啦-四點下班"><a href="#颱風來啦-四點下班" class="headerlink" title="颱風來啦 四點下班"></a>颱風來啦 四點下班</h2><p>大家8888888888888888888888888888</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/09/Work/201807/20180709%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Patrick">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Patrick_Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/07/09/Work/201807/20180709%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" class="post-title-link" itemprop="url">20180709工作日誌(EntityFramework; MongoDB)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2018-07-09 14:31:10" itemprop="dateCreated datePublished" datetime="2018-07-09T14:31:10+08:00">2018-07-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2019-05-26 11:05:14" itemprop="dateModified" datetime="2019-05-26T11:05:14+08:00">2019-05-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" itemprop="url" rel="index"><span itemprop="name">工作日誌</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="在-EF-Core-上使用-MongoDB"><a href="#在-EF-Core-上使用-MongoDB" class="headerlink" title="在 EF Core 上使用 MongoDB"></a>在 EF Core 上使用 MongoDB</h2><p><a target="_blank" rel="noopener" href="https://github.com/crhairr/EntityFrameworkCore.MongoDb">EntityFrameworkCore.MongoDb</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/06/Work/201807/20180706%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Patrick">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Patrick_Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/07/06/Work/201807/20180706%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" class="post-title-link" itemprop="url">20180706工作日誌(EntityFramework)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2018-07-06 15:37:28" itemprop="dateCreated datePublished" datetime="2018-07-06T15:37:28+08:00">2018-07-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2019-05-26 11:05:14" itemprop="dateModified" datetime="2019-05-26T11:05:14+08:00">2019-05-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" itemprop="url" rel="index"><span itemprop="name">工作日誌</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="EntityFramework-Core-CodeFirst"><a href="#EntityFramework-Core-CodeFirst" class="headerlink" title="EntityFramework Core CodeFirst"></a>EntityFramework Core CodeFirst</h2><h3 id="一-對-零或一"><a href="#一-對-零或一" class="headerlink" title="一 對 零或一"></a>一 對 零或一</h3><p><a target="_blank" rel="noopener" href="http://www.entityframeworktutorial.net/efcore/one-to-one-conventions-entity-framework-core.aspx">EntityFramework Tutorial : One-To-ZeroOrOne</a></p>
+<h3 id="一-對-多"><a href="#一-對-多" class="headerlink" title="一 對 多"></a>一 對 多</h3><p><a target="_blank" rel="noopener" href="http://www.entityframeworktutorial.net/efcore/one-to-many-conventions-entity-framework-core.aspx">EntityFramework Tutorial : One-To-Many</a></p>
+<h3 id="多-對-多"><a href="#多-對-多" class="headerlink" title="多 對 多"></a>多 對 多</h3><p><a target="_blank" rel="noopener" href="http://www.entityframeworktutorial.net/code-first/configure-many-to-many-relationship-in-code-first.aspx">EntityFramework Tutorial : Many-To-Many EF6</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/05/Work/201807/20180705%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Patrick">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Patrick_Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/07/05/Work/201807/20180705%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" class="post-title-link" itemprop="url">20180705工作日誌(CoreRT)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2018-07-05 18:27:20" itemprop="dateCreated datePublished" datetime="2018-07-05T18:27:20+08:00">2018-07-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2019-05-26 11:05:14" itemprop="dateModified" datetime="2019-05-26T11:05:14+08:00">2019-05-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" itemprop="url" rel="index"><span itemprop="name">工作日誌</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="接續昨天-NET-Core-發布時輕量化-剩下一個-exe檔好棒棒"><a href="#接續昨天-NET-Core-發布時輕量化-剩下一個-exe檔好棒棒" class="headerlink" title="[接續昨天] NET Core 發布時輕量化 剩下一個.exe檔好棒棒"></a>[接續昨天] NET Core 發布時輕量化 剩下一個.exe檔好棒棒</h2><p><a target="_blank" rel="noopener" href="https://github.com/dotnet/corert">Github : CoreRT</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/dotnet/corert/blob/master/Documentation/prerequisites-for-building.md">Github : CoreRT Pre-Requisites</a></p>
+<ol>
+<li>安裝Visual Studio 2017 包含Visual C++</li>
+<li>安裝CMake(安裝程式中記得把PATH給設定上去)</li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://github.com/dotnet/corert/blob/master/Documentation/how-to-build-and-run-ilcompiler-in-console-shell-prompt.md">Github : CoreRT照著步驟做</a></p>
+<ol>
+<li>Clone CoreRT的專案原始碼</li>
+<li>Build它<br> <code>build[.cmd|.sh] clean [Debug|Release]</code><ul>
+<li>應該會跑一段時間</li>
+<li>會Restore所有的Nuget Project</li>
+<li>最重要的ILCompiler放在<repo_root>\bin&lt;OS&gt;.<arch>.<Config>\tools.</li>
+<li>自動build &amp; test (我test總會有三個沒過)</li>
+</ul>
+</li>
+<li>別忘記安裝 <a target="_blank" rel="noopener" href="https://www.microsoft.com/net/download/windows">.NET Core SDK</a></li>
+<li>開啟你<del>CMD</del>，ㄜ不是，是x64 Native Tools Command Prompt for VS 2017</li>
+<li>真的要開啟 <strong>x64 Native Tools Command Prompt for VS 2017</strong> 不是CMDㄛ</li>
+<li>開啟 <em>x64 Native Tools Command Prompt for VS 2017</em></li>
+<li>編輯你的.csproj檔案 加入以下這些 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">project</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">Import</span> <span class="attr">Project</span>=<span class="string">&quot;$(MSBuildSDKsPath)\Microsoft.NET.Sdk\Sdk\Sdk.targets&quot;</span> <span class="attr">Condition</span>=<span class="string">&quot; &#x27;$(Configuration)&#x27; != &#x27;Debug&#x27;&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Import</span> <span class="attr">Project</span>=<span class="string">&quot;$(IlcPath)\build\Microsoft.NETCore.Native.targets&quot;</span> <span class="attr">Condition</span>=<span class="string">&quot; &#x27;$(Configuration)&#x27; != &#x27;Debug&#x27;&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">project</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li>切到你的專案下 輸入這個 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dotnet publish --configuration Release --runtime win-x64 &#x2F;p:IlcPath&#x3D;&lt;repo_root&gt;\bin\&lt;OS&gt;.&lt;arch&gt;.&lt;Config&gt;</span><br></pre></td></tr></table></figure>
+ 以我的例子來舉例的話就像下面醬子 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dotnet publish --configuration Release --runtime win-x64 &#x2F;p:IlcPath&#x3D;D:\Patrick\corert\bin\Windows_NT.x64.Debug</span><br></pre></td></tr></table></figure></li>
+<li>江江，在 bin\x64\Release\netcoreapp2.1\win-x64\publish\ 寶藏都在那了</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/04/Work/201807/20180704%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Patrick">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Patrick_Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/07/04/Work/201807/20180704%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" class="post-title-link" itemprop="url">20180704工作日誌(CMD; Windows Directory; CoreRT)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2018-07-04 14:41:39" itemprop="dateCreated datePublished" datetime="2018-07-04T14:41:39+08:00">2018-07-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2019-05-26 11:05:14" itemprop="dateModified" datetime="2019-05-26T11:05:14+08:00">2019-05-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" itemprop="url" rel="index"><span itemprop="name">工作日誌</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="CMD-叫出有的沒的"><a href="#CMD-叫出有的沒的" class="headerlink" title="CMD 叫出有的沒的"></a>CMD 叫出有的沒的</h2><p>現在目錄的路徑<br><code>echo %CD%</code></p>
+<p>叫出所有PATH<br><code>echo %path% | path</code></p>
+<p>叫出的PATH條列式的排整齊<br><code>echo %path:;=&amp;echo.%</code></p>
+<p>叫出SET<br><code>SET</code></p>
+<h2 id="Windows-資料夾第二種排序方式"><a href="#Windows-資料夾第二種排序方式" class="headerlink" title="Windows 資料夾第二種排序方式"></a>Windows 資料夾第二種排序方式</h2><p>比如說：我最主要是要依照時間倒序排，但又希望資料夾位於上方。</p>
+<p><a target="_blank" rel="noopener" href="https://answers.microsoft.com/en-us/windows/forum/windows_10-files-winpc/sort-files-by-date-with-folders-on-top/820aa6c6-ddf2-4ca5-b401-75b71103bfdb">Microsoft Community</a></p>
+<p>Ans: 時間排序依原本方式，第二種排序方式使用Shift選擇</p>
+<h2 id="NET-Core-發布時用self-contained-輕量化"><a href="#NET-Core-發布時用self-contained-輕量化" class="headerlink" title="NET Core 發布時用self-contained 輕量化"></a>NET Core 發布時用self-contained 輕量化</h2><p>self-contained的發布方式，<br>在目前會產生落落長的檔案，<br>找到一個Tool可以輕量化。</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/dotnet/corert">Github : CoreRT</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/dotnet/cli/issues/7737">Github : CoreRT by answer</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/03/Work/201807/20180703%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Patrick">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Patrick_Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/07/03/Work/201807/20180703%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" class="post-title-link" itemprop="url">20180703工作日誌(FileSystemWatcher; YamlDotNet)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2018-07-03 13:14:50" itemprop="dateCreated datePublished" datetime="2018-07-03T13:14:50+08:00">2018-07-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2019-05-26 11:05:14" itemprop="dateModified" datetime="2019-05-26T11:05:14+08:00">2019-05-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" itemprop="url" rel="index"><span itemprop="name">工作日誌</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="利用-System-IO-FileSystemWatcher-取得檔案變更通知"><a href="#利用-System-IO-FileSystemWatcher-取得檔案變更通知" class="headerlink" title="利用 System.IO.FileSystemWatcher 取得檔案變更通知"></a>利用 System.IO.FileSystemWatcher 取得檔案變更通知</h2><p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/721714/notification-when-a-file-changes">StackOverflow : Notification when a file changes?</a></p>
+<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/40859136/filesystemwatcher-with-the-console-application">StackOverflow : FileSystemWatcher with the console application</a>  </p>
+<p>不可在Filter內設置多個值<br><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/6965184/how-to-set-filter-for-filesystemwatcher-for-multiple-file-types">StackOverflow : How to set filter for FileSystemWatcher for multiple file types?</a>  </p>
+<hr>
+<h2 id="Excel-To-Yaml-File-Transfer"><a href="#Excel-To-Yaml-File-Transfer" class="headerlink" title="Excel To Yaml File Transfer"></a>Excel To Yaml File Transfer</h2><p><a target="_blank" rel="noopener" href="https://github.com/seed-ui/seedtable">Github : seedtable</a></p>
+<p>使用到的Nuget套件</p>
+<ul>
+<li>EPPlus</li>
+<li>YamlDotNet</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left" aria-label="上一頁"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Patrick</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">136</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">102</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Patrick</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 強力驅動
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
